@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #0a2a43;
+    min-height: 25000px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+section {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section img {
+    height: 300px;
+    object-fit: cover;
+    pointer-events: none;
+    align-items: center;
+    position: fixed;
+    top: 50px;
+}
+
+h1 {
+    top: 70px;
+    color: blanchedalmond;
+    font-size: 10em;
+    z-index: 1;
+}
+h2 {
+    color: blanchedalmond;
+    font-size: 10em;
+    z-index: 1;
+}
+h3 {
+    color: blanchedalmond;
+    font-size: 5em;
+    z-index: 1;
+}
+p {
+    padding-top: 50px;
+    color: blanchedalmond;
+    font-size: 70px;
+    z-index: 1;
+}
+#about {
+    left: 200px;
+    overflow: hidden;
+    top: 2000px;
+    width: 100%;
+    height: 500px;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
+#contact {
+    left: 200px;
+    overflow: hidden;
+    top: 4000px;
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+#repos {
+    left: 200px;
+    overflow: hidden;
+    top: 5000px;
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
+#darkModeButtom {
+    top: 20px;
+    left: -100px;
+    position: fixed;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+#selectChapter {
+    top: 90px;
+    left: -100px;
+    position: fixed;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+#chaptersOverview {
+    top: 160px;
+    left: 10px;
+    position: fixed;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+.chaptersOverviewButton {
+    background: none;
+    border: none;
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 50%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+    color: blanchedalmond;
+}
+
+#languageButton {
+    top: 160px;
+    left: -100px;
+    position: fixed;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+    width: 50px;
+}
+#scrollToTop {
+    top: 230px;
+    left: -100px;
+    position: fixed;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+.repos-logo {
+    left: -3000px;
+    overflow: hidden;
+    top: 400px;
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#ballImg {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    display: none;
+}
+#counter1 {
+    left: 20px;
+    top: 0px;
+    position: fixed;
+    font-size: 50px;
+    display: none;
+}
+#counter2 {
+    display: none;
+    right: 20px;
+    top: 0px;
+    position: fixed;
+    font-size: 50px;
+}
+
+.introductionKeys {
+    position: fixed;
+    display: none;
+    font-size: 50px;
+}
+
+#botButton {
+    top: 20px;
+    left: 500px;
+    position: fixed;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    display: none;
+    font-size: 15px;
+}
