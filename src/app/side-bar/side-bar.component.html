@@ -1,0 +1,32 @@
+<img
+  src="assets/{{ colorSchema === 'dark' ? 'light' : 'dark' }}mode.png"
+  style="top: 20px"
+  [style.left]="offsetLeft + 'px'"
+  (click)="toggleColorSchema()"
+/>
+
+<img
+  src="assets/chapters{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
+  style="top: 80px"
+  [style.left]="offsetLeft + 'px'"
+  (click)="toggleChapters()"
+/>
+<div class="chapters" *ngIf="showChapters">
+  <button style="top: 140px" [style.left]="offsetLeft + 'px'">c1</button>
+  <button style="top: 200px" [style.left]="offsetLeft + 'px'">c2</button>
+  <button style="top: 260px" [style.left]="offsetLeft + 'px'">c3</button>
+</div>
+
+<button
+  [style.top]="140 + (showChapters ? 180 : 0) + 'px'"
+  [style.left]="offsetLeft + 'px'"
+>
+  en
+</button>
+
+<img
+  src="assets/top{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
+  [style.top]="200 + (showChapters ? 180 : 0) + 'px'"
+  [style.left]="offsetLeft + 'px'"
+  (click)="goToTop()"
+/>
