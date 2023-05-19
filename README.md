@@ -28,4 +28,8 @@ View the Application [here](https://phil1436.github.io/).
 
 ---
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+
+---
+
 by [Philipp B.](https://github.com/phil1436)
