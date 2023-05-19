@@ -12,16 +12,27 @@
   (click)="toggleChapters()"
 />
 <div class="chapters" *ngIf="showChapters">
-  <button style="top: 140px" [style.left]="offsetLeft + 'px'">c1</button>
-  <button style="top: 200px" [style.left]="offsetLeft + 'px'">c2</button>
-  <button style="top: 260px" [style.left]="offsetLeft + 'px'">c3</button>
+  <button style="top: 140px" [style.left]="offsetLeft + 'px'" long-text="out">
+    <span>ab</span>
+  </button>
+  <button style="top: 200px" [style.left]="offsetLeft + 'px'" long-text="ntact">
+    <span>co</span>
+  </button>
+  <button
+    style="top: 260px"
+    [style.left]="offsetLeft + 'px'"
+    long-text="positories"
+  >
+    <span>re</span>
+  </button>
 </div>
 
 <button
   [style.top]="140 + (showChapters ? 180 : 0) + 'px'"
   [style.left]="offsetLeft + 'px'"
+  long-text="utsch"
 >
-  en
+  <span>de</span>
 </button>
 
 <img
