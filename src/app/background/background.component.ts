@@ -18,11 +18,17 @@ export class BackgroundComponent {
   }
 
   setOffsetSide(y: number): void {
+    let end = 40000;
     if (y == 0) {
       this.offsetSide = window.innerWidth / 2 - 160;
     } else if (y < 1000) {
       this.offsetSide =
         70 + ((window.innerWidth / 2 - 230) / 1000) * (1000 - y);
+    } else if (y >= end) {
+      this.offsetSide = window.innerWidth / 2 - 160;
+    } else if (y > end - 1000) {
+      this.offsetSide =
+        70 + ((window.innerWidth / 2 - 230) / 1000) * (y - (end - 1000));
     } else {
       this.offsetSide = 70;
     }

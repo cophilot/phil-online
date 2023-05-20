@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { Chapter, TimelinePoint, Skill } from './classes';
+import { Chapter, TimelinePoint, Skill, Project } from './classes';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,9 @@ export class AppComponent {
   workingLifeTimeLine: TimelinePoint[] = [];
   educationTimeLine: TimelinePoint[] = [];
   skills: Skill[] = getSkills();
+  projects: Project[] = [];
   helpText: string = '';
+  aboutMeText: string = '';
   showHelp: boolean = false;
   yStartPosition: number = 0;
   constructor() {}
@@ -63,7 +65,7 @@ export class AppComponent {
       if (window.scrollY == this.yStartPosition) {
         this.showHelp = true;
       }
-    }, 10000);
+    }, 100000);
   }
 
   darkMode() {
@@ -116,7 +118,8 @@ export class AppComponent {
     this.chapters = getChapters(AppComponent.IS_ENGLISH);
     this.workingLifeTimeLine = getWorkingLifeTimeline(AppComponent.IS_ENGLISH);
     this.educationTimeLine = getEducationTimeline(AppComponent.IS_ENGLISH);
-
+    this.projects = getProjects(AppComponent.IS_ENGLISH);
+    this.aboutMeText = getAboutMeText(AppComponent.IS_ENGLISH);
     if (AppComponent.IS_ENGLISH) {
       this.helpText = 'Scroll down to see more';
     } else {
@@ -153,11 +156,11 @@ function getChapters(inEnglish: boolean): Chapter[] {
       new Chapter(
         'projekte',
         start + (AppComponent.CHAPTER_LENGTH + 2000) * 4,
-        AppComponent.CHAPTER_LENGTH
+        AppComponent.CHAPTER_LENGTH + 5000
       ),
       new Chapter(
         'fähigkeiten',
-        start + (AppComponent.CHAPTER_LENGTH + 2000) * 5,
+        start + (AppComponent.CHAPTER_LENGTH + 2000) * 5 + 5000,
         AppComponent.CHAPTER_LENGTH
       ),
     ];
@@ -187,11 +190,11 @@ function getChapters(inEnglish: boolean): Chapter[] {
     new Chapter(
       'projects',
       start + (AppComponent.CHAPTER_LENGTH + 2000) * 4,
-      AppComponent.CHAPTER_LENGTH
+      AppComponent.CHAPTER_LENGTH + 5000
     ),
     new Chapter(
       'skills',
-      start + (AppComponent.CHAPTER_LENGTH + 2000) * 5,
+      start + (AppComponent.CHAPTER_LENGTH + 2000) * 5 + 5000,
       AppComponent.CHAPTER_LENGTH
     ),
   ];
@@ -279,6 +282,98 @@ function getWorkingLifeTimeline(inEnglish: boolean): TimelinePoint[] {
     ),
   ];
 }
+
+function getProjects(isEnglish: boolean): Project[] {
+  if (!isEnglish) {
+    return [
+      new Project(
+        'ownobjectscriptextension',
+        'https://github.com/phil1436/ownobjectscriptextension',
+        'https://raw.githubusercontent.com/phil1436/ownobjectscriptextension/master/resources/logo.png',
+        'eine visual studio code erweiterung, die tools für intersystems objectscript bereitstellt',
+        'ansehen'
+      ),
+      new Project(
+        'owngitextension',
+        'https://github.com/phil1436/owngitextension',
+        'https://raw.githubusercontent.com/phil1436/owngitextension/main/resources/logo.png',
+        'eine visual studio code erweiterung, die tools für die arbeit mit github-projekten bietet',
+        'ansehen'
+      ),
+      new Project(
+        'ownvscodeextension',
+        'https://github.com/phil1436/ownvscodeextension',
+        'https://raw.githubusercontent.com/phil1436/ownvscodeextension/master/resources/logo.png',
+        'bereitstellung von tools für visual studio code',
+        'ansehen'
+      ),
+      new Project(
+        'petgram',
+        'https://petgram.philipp-bonin.com/',
+        'assets/PetgramLogo.png',
+        'hier gibt es nichts zu sehen, nur eine social-media-seite für haustiere',
+        'versuchen'
+      ),
+      new Project(
+        'color chicken',
+        'https://colorchicken.philipp-bonin.com/',
+        'assets/ColorChickenLogo.png',
+        'sei ein gefiedertes chamäleon und meistere die hürden in color-chicken',
+        'versuchen'
+      ),
+    ];
+  }
+  return [
+    new Project(
+      'ownobjectscriptextension',
+      'https://github.com/phil1436/ownobjectscriptextension',
+      'https://raw.githubusercontent.com/phil1436/ownobjectscriptextension/master/resources/logo.png',
+      'a visual studio code extension that supplies tools for intersystems objectscript',
+      'view'
+    ),
+    new Project(
+      'owngitextension',
+      'https://github.com/phil1436/owngitextension',
+      'https://raw.githubusercontent.com/phil1436/owngitextension/main/resources/logo.png',
+      'a visual studio code extension that offers tools for working with github projects',
+      'view'
+    ),
+    new Project(
+      'ownvscodeextension',
+      'https://github.com/phil1436/ownvscodeextension',
+      'https://raw.githubusercontent.com/phil1436/ownvscodeextension/master/resources/logo.png',
+      'providing tools for visual studio code',
+      'view'
+    ),
+    new Project(
+      'petgram',
+      'https://petgram.philipp-bonin.com/',
+      'assets/PetgramLogo.png',
+      'nothing to see here, just a social media site for pets',
+      'try'
+    ),
+    new Project(
+      'color chicken',
+      'https://colorchicken.philipp-bonin.com/',
+      'assets/ColorChickenLogo.png',
+      'be a feathered chameleon, master the hurdles in color chicken',
+      'try'
+    ),
+  ];
+}
+
+function getAboutMeText(inEnglish: boolean): string {
+  if (!inEnglish) {
+    return 'new Student {\n  name: "philipp",\n  alter: 23,\n  fach: "informatik",\n  job: { firma: "intersystems", position: "intern sales engineer" }\n}';
+  }
+  return 'new Student {\n  name: "philipp",\n  age: 23,\n  subject: "computer science",\n  job: { company: "intersystems", position: "intern sales engineer" }\n}';
+}
+/* function getAboutMeText(inEnglish: boolean): string {
+  if (!inEnglish) {
+    return 'hi ich bin philipp\n23 jahre alt\ninformatikstudium in deutschland\nwerkstudent bei intersystems';
+  }
+  return 'hi i am philipp\n23 years old\nstudying computer science in germany\nworking student at intersystems';
+} */
 
 function getEducationTimeline(inEnglish: boolean): TimelinePoint[] {
   if (!inEnglish) {

@@ -22,7 +22,7 @@ export class SideBarComponent {
 
   offsetLeft: number = -50;
   showChapters: boolean = false;
-
+  showSidebar: boolean = true;
   isEnglish: boolean = AppComponent.IS_ENGLISH;
 
   ngOnInit(): void {
@@ -44,6 +44,7 @@ export class SideBarComponent {
     }
     if (y == 0) {
       this.showChapters = false;
+      this.showSidebar = true;
     }
   }
 
@@ -77,5 +78,13 @@ export class SideBarComponent {
     }
     AppComponent.COLOR_SCHEMA = this.colorSchema;
     AppComponent.setColorScheme();
+  }
+
+  close(): void {
+    this.showSidebar = false;
+    this.showChapters = false;
+  }
+  open(): void {
+    this.showSidebar = true;
   }
 }

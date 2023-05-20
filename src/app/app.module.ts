@@ -9,6 +9,7 @@ import { ChapterHeadingComponent } from './chapter-heading/chapter-heading.compo
 import { TimelineComponent } from './timeline/timeline.component';
 import { SkillComponent } from './skill/skill.component';
 import { ProjectComponent } from './project/project.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProjectComponent } from './project/project.component';
     TimelineComponent,
     SkillComponent,
     ProjectComponent,
+    AboutMeComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

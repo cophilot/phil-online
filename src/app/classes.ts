@@ -53,7 +53,29 @@ export class TimelinePoint {
   }
 }
 
-export class Project {}
+export class Project {
+  public name: string;
+  public url: string;
+  public img: string;
+  public description: string;
+  public buttonText: string;
+  public active: boolean = false;
+
+  constructor(
+    name: string,
+    url: string,
+    img: string,
+    description: string,
+    buttonText: string = 'View'
+  ) {
+    this.name = name;
+    this.url = url;
+    this.img = img;
+    this.description = description;
+    this.buttonText = buttonText;
+  }
+}
+
 export class Skill {
   public name: string;
   public url: string;
