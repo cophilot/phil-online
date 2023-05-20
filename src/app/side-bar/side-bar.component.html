@@ -12,32 +12,29 @@
   (click)="toggleChapters()"
 />
 <div class="chapters" *ngIf="showChapters">
-  <button style="top: 140px" [style.left]="offsetLeft + 'px'" long-text="out">
-    <span>ab</span>
-  </button>
-  <button style="top: 200px" [style.left]="offsetLeft + 'px'" long-text="ntact">
-    <span>co</span>
-  </button>
   <button
-    style="top: 260px"
-    [style.left]="offsetLeft + 'px'"
-    long-text="positories"
+    *ngFor="let chapter of chapters"
+    [style.top]="140 + chapter.id * 60 + 'px'"
+    [style.left]="offsetLeft + 10 + 'px'"
+    [attr.long-text]="chapter.name.substring(2)"
+    (click)="goToChapter(chapter.id)"
   >
-    <span>re</span>
+    <span>{{ chapter.name.charAt(0) + chapter.name.charAt(1) }}</span>
   </button>
 </div>
 
 <button
-  [style.top]="140 + (showChapters ? 180 : 0) + 'px'"
-  [style.left]="offsetLeft + 'px'"
-  long-text="utsch"
+  [style.top]="140 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+  [style.left]="offsetLeft + 10 + 'px'"
+  [attr.long-text]="isEnglish ? 'utsch' : 'glish'"
+  (click)="toggleLanguage()"
 >
-  <span>de</span>
+  <span>{{ isEnglish ? "de" : "en" }}</span>
 </button>
 
 <img
   src="assets/top{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
-  [style.top]="200 + (showChapters ? 180 : 0) + 'px'"
+  [style.top]="200 + (showChapters ? chapters.length * 60 : 0) + 'px'"
   [style.left]="offsetLeft + 'px'"
   (click)="goToTop()"
 />

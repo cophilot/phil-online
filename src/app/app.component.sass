@@ -1,13 +1,38 @@
 h1
-    top: 70px
     font-size: 10em
     z-index: 1
 
 section
-    position: relative
+    position: absolute
     width: 100%
     height: 300px
     overflow: hidden
     display: flex
     justify-content: center
     align-items: center
+
+.help
+    position: fixed
+    width: 600px
+    background: var(--text-color)
+    color: var(--bg-color)
+    z-index: 100000
+    padding: 1em
+    border-radius: 1em
+    box-shadow: 0 0 1em rgba(0,0,0,.5)
+    font-size: 2em
+    text-align: center
+    transition: all .5s ease-in-out
+    bottom: 100px
+    left: 50%
+    transform: translate(-50%,0)
+    animation: helpAnimation 0.8s infinite alternate
+    cursor: pointer
+
+@keyframes helpAnimation
+    0%
+        transform: translate(-50%,0%)
+    50%
+        transform: translate(-50%,100%)
+    100%
+        transform: translate(-50%,80%)

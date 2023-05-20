@@ -1,5 +1,12 @@
-import { Component, HostListener } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { AppComponent } from '../app.component';
+import { Chapter } from '../classes';
 
 @Component({
   selector: 'app-side-bar',
@@ -7,12 +14,21 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./side-bar.component.sass'],
 })
 export class SideBarComponent {
+  @Input() chapters: Chapter[] = [];
+
+  @Output() languageChangeEmitter = new EventEmitter<string>();
+
   colorSchema: string = AppComponent.COLOR_SCHEMA;
+
   offsetLeft: number = -50;
   showChapters: boolean = false;
 
+  isEnglish: boolean = AppComponent.IS_ENGLISH;
+
   ngOnInit(): void {
     this.setOffsetLeft(window.scrollY);
+    this.isEnglish = AppComponent.IS_ENGLISH;
+    this.colorSchema = AppComponent.COLOR_SCHEMA;
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -31,8 +47,22 @@ export class SideBarComponent {
     }
   }
 
+  toggleLanguage(): void {
+    this.isEnglish = !this.isEnglish;
+    AppComponent.IS_ENGLISH = this.isEnglish;
+    this.languageChangeEmitter.emit();
+  }
+
   goToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  goToChapter(id: number): void {
+    for (let c of this.chapters) {
+      if (c.id == id) {
+        window.scrollTo({ top: c.start, behavior: 'smooth' });
+      }
+    }
   }
 
   toggleChapters(): void {

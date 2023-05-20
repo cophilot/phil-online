@@ -1,5 +1,35 @@
 <app-background></app-background>
+<app-side-bar
+  [chapters]="chapters"
+  (languageChangeEmitter)="setLanguage()"
+></app-side-bar>
+
 <section>
   <h1>phil-online</h1>
 </section>
-<app-side-bar></app-side-bar>
+<!-- <section [style.top]="18000 + 'px'">
+  <h1>phil-online</h1>
+</section> -->
+<app-timeline
+  [points]="educationTimeLine"
+  [start]="getChapterByName('education', 'ausbildung').start"
+  [speed]="1"
+></app-timeline>
+<app-timeline
+  [points]="workingLifeTimeLine"
+  [start]="getChapterByName('working-life', 'arbeit').start"
+  [speed]="2"
+></app-timeline>
+
+<app-chapter-heading
+  *ngFor="let c of chapters"
+  [chapter]="c"
+></app-chapter-heading>
+
+<app-skill
+  [skills]="skills"
+  [start]="getChapterByName('skills', 'fähigkeiten').start"
+  [length]="getChapterByName('skills', 'fähigkeiten').length"
+></app-skill>
+
+<p *ngIf="showHelp" class="help" (click)="hideHelp()">{{ helpText }}</p>
