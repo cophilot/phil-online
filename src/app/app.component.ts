@@ -65,7 +65,7 @@ export class AppComponent {
       if (window.scrollY == this.yStartPosition) {
         this.showHelp = true;
       }
-    }, 100000);
+    }, 10000);
   }
 
   darkMode() {
