@@ -1,5 +1,5 @@
 h1
-    font-size: 10em
+    font-size: var(--h1-font-size)
     z-index: 1
 
 section
@@ -28,6 +28,13 @@ section
     transform: translate(-50%,0)
     animation: helpAnimation 0.8s infinite alternate
     cursor: pointer
+
+@media screen and (max-width: 800px)
+    .help
+        width: 60%
+        bottom: 100px
+    .background
+        display: none
 
 @keyframes helpAnimation
     0%

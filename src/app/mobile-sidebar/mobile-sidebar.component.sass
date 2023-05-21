@@ -1,0 +1,60 @@
+*
+    position: fixed
+    z-index: 1000
+    transition: all .2s ease-in-out
+
+button, img
+    background-color: transparent
+    color: var(--bg-color)
+    font-size: var(--font-size-middle)
+    text-align: center
+    width: 100%
+    height: 50px
+
+button
+    border-bottom: 1px solid var(--bg-color)
+    border-top: none
+    border-left: none
+    border-right: none
+
+img
+    width: 50px
+    left: 50%
+    transform: translateX(-50%)
+.imgWrapper
+    width: 100%
+    height: 50px
+    border-bottom: 1px solid var(--bg-color)
+    border-top: none
+    border-left: none
+    border-right: none
+
+.sidebar
+    background-color: var(--text-color)
+    width: 100%
+    animation-name: slideInFromTop
+    animation-duration: 400ms
+    animation-fill-mode: forwards
+
+button, img
+    cursor: pointer
+
+.burgerMenu
+    top: 20px
+    right: 20px
+    width: 40px
+    height: 40px
+    cursor: pointer
+    .burgerBar
+        margin-bottom: 5px
+        position: relative
+        height: 5px
+        width: 40px
+        border-radius: 5px
+        background-color: var(--text-color)
+
+@keyframes slideInFromTop
+    0%
+        transform: translateY(-100%)
+    100%
+        transform: translateY(0%)

@@ -6,7 +6,7 @@
 
 .skill
     .skillName
-        font-size: 30px
+        font-size: var(--font-size-middle)
         left: 50%
         transform: translate(-50%, 0)
         text-align: center
@@ -18,3 +18,8 @@
             display: block
         .skillImg
             transform: scale(1.2)
+
+@media screen and (max-width: 800px)
+    *
+        height: 70px
+        width: 70px

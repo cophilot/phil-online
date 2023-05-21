@@ -1,8 +1,14 @@
-<app-background></app-background>
+<app-background class="background"></app-background>
 <app-side-bar
+  *ngIf="!isMobile"
   [chapters]="chapters"
   (languageChangeEmitter)="setLanguage()"
 ></app-side-bar>
+<app-mobile-sidebar
+  *ngIf="isMobile"
+  [chapters]="chapters"
+  (languageChangeEmitter)="setLanguage()"
+></app-mobile-sidebar>
 
 <section>
   <h1>phil-online</h1>

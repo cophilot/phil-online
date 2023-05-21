@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { Chapter, TimelinePoint, Skill, Project } from './classes';
+import { Chapter, TimelinePoint, Skill, Project } from './utils/classes';
 
 @Component({
   selector: 'app-root',
@@ -12,20 +12,23 @@ export class AppComponent {
   public static COLOR_SCHEMA: string = 'dark';
   public static CHAPTER_LENGTH: number = 3000;
   public static IS_ENGLISH: boolean = detectLanguage();
+  public static IS_MOBILE: boolean = false;
 
   chapters: Chapter[] = [];
   workingLifeTimeLine: TimelinePoint[] = [];
   educationTimeLine: TimelinePoint[] = [];
-  skills: Skill[] = getSkills();
+  skills: Skill[] = [];
   projects: Project[] = [];
   helpText: string = '';
   aboutMeText: string = '';
   showHelp: boolean = false;
+  isMobile: boolean = false;
   yStartPosition: number = 0;
   constructor() {}
 
   ngOnInit(): void {
     AppComponent.COLOR_SCHEMA = this.detectPrefersColorScheme();
+    this.setMobileVersion();
 
     getChapters(false).forEach((chapter) => {
       if (window.location.href.includes(chapter.name)) {
@@ -59,7 +62,7 @@ export class AppComponent {
 
     AppComponent.setColorScheme();
     this.setLanguage();
-
+    this.skills = getSkills();
     this.yStartPosition = window.scrollY;
     setTimeout(() => {
       if (window.scrollY == this.yStartPosition) {
@@ -90,6 +93,16 @@ export class AppComponent {
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
     }
+  }
+  setMobileVersion(): void {
+    if (window.innerWidth < 800) {
+      document.documentElement.setAttribute('data-size', 'mobile');
+      AppComponent.IS_MOBILE = true;
+    } else {
+      document.documentElement.setAttribute('data-size', 'desktop');
+      AppComponent.IS_MOBILE = false;
+    }
+    this.isMobile = AppComponent.IS_MOBILE;
   }
 
   detectPrefersColorScheme(): string {
@@ -363,6 +376,12 @@ function getProjects(isEnglish: boolean): Project[] {
 }
 
 function getAboutMeText(inEnglish: boolean): string {
+  if (AppComponent.IS_MOBILE) {
+    if (!inEnglish) {
+      return 'new Student {\n  name: "philipp",\n  alter: 23,\n  fach: "informatik",\n  job: {\n    firma: "intersystems",\n    position: "intern sales engineer"\n }\n}';
+    }
+    return 'new Student {\n  name: "philipp",\n  age: 23,\n  subject: "computer science",\n  job: {\n   company: "intersystems",\n    position: "intern sales engineer"\n }\n}';
+  }
   if (!inEnglish) {
     return 'new Student {\n  name: "philipp",\n  alter: 23,\n  fach: "informatik",\n  job: { firma: "intersystems", position: "intern sales engineer" }\n}';
   }
@@ -505,14 +524,31 @@ function getSkills() {
 
   let size = skills.length;
   let x = window.innerWidth / 2;
-  let start = x - (size * 120) / 4;
+  let start =
+    x -
+    (size * (AppComponent.IS_MOBILE ? 80 : 120)) /
+      (AppComponent.IS_MOBILE ? 6 : 4);
 
-  for (let i = 0; i < skills.length / 2; i++) {
-    let j = skills.length - (i + 1);
-    skills[i].x = start + i * 120;
-    skills[j].x = start + i * 120;
-    skills[i].y = y;
-    skills[j].y = y + 120;
+  if (AppComponent.IS_MOBILE) {
+    y = 300;
+    for (let i = 0; i < skills.length / 3; i++) {
+      let j = skills.length - (i + 1);
+      let k = skills.length / 3 + i;
+      skills[i].x = start + i * 80;
+      skills[j].x = start + i * 80;
+      skills[k].x = start + i * 80;
+      skills[i].y = y;
+      skills[j].y = y + 80;
+      skills[k].y = y + 160;
+    }
+  } else {
+    for (let i = 0; i < skills.length / 2; i++) {
+      let j = skills.length - (i + 1);
+      skills[i].x = start + i * 120;
+      skills[j].x = start + i * 120;
+      skills[i].y = y;
+      skills[j].y = y + 120;
+    }
   }
 
   return skills;
@@ -520,7 +556,6 @@ function getSkills() {
 
 function detectLanguage(): boolean {
   let language = navigator.language;
-  console.log(language);
   if (language == undefined) {
     return true;
   }

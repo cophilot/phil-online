@@ -1,3 +1,5 @@
+import { AppComponent } from '../app.component';
+
 export class Chapter {
   public name: string;
   public id: number;
@@ -94,20 +96,32 @@ export class Skill {
     this.y = y;
     this.x = x;
     this.img = img;
-
-    let random = Math.floor(Math.random() * 3);
-    if (random == 0) {
-      // left
-      this.startX = -100;
-      this.startY = Math.floor(Math.random() * window.innerHeight);
-    } else if (random == 1) {
-      //right
-      this.startX = window.innerWidth + 50;
-      this.startY = Math.floor(Math.random() * window.innerHeight);
+    let random = Math.floor(Math.random() * (AppComponent.IS_MOBILE ? 2 : 3));
+    if (AppComponent.IS_MOBILE) {
+      if (random == 0) {
+        // left
+        this.startX = -100;
+      } else {
+        //right
+        this.startX = window.innerWidth + 50;
+      }
+      this.startY =
+        Math.floor(Math.random() * (window.innerHeight / 2)) +
+        window.innerHeight / 2;
     } else {
-      //top
-      this.startY = -100;
-      this.startX = Math.floor(Math.random() * window.innerWidth);
+      if (random == 0) {
+        // left
+        this.startX = -100;
+        this.startY = Math.floor(Math.random() * window.innerHeight);
+      } else if (random == 1) {
+        //right
+        this.startX = window.innerWidth + 50;
+        this.startY = Math.floor(Math.random() * window.innerHeight);
+      } else {
+        //top
+        this.startY = -100;
+        this.startX = Math.floor(Math.random() * window.innerWidth);
+      }
     }
     this.currX = this.startX;
     this.currY = this.startY;

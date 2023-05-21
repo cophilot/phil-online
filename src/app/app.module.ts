@@ -10,6 +10,7 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { SkillComponent } from './skill/skill.component';
 import { ProjectComponent } from './project/project.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { MobileSidebarComponent } from './mobile-sidebar/mobile-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
     SkillComponent,
     ProjectComponent,
     AboutMeComponent,
+    MobileSidebarComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

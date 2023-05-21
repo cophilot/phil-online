@@ -1,5 +1,5 @@
 import { Component, Input, HostListener } from '@angular/core';
-import { Skill } from '../classes';
+import { Skill } from '../utils/classes';
 
 @Component({
   selector: 'app-skill',

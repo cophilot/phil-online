@@ -9,24 +9,23 @@ import { AppComponent } from '../app.component';
 import { Chapter } from '../utils/classes';
 
 @Component({
-  selector: 'app-side-bar',
-  templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.sass'],
+  selector: 'app-mobile-sidebar',
+  templateUrl: './mobile-sidebar.component.html',
+  styleUrls: ['./mobile-sidebar.component.sass'],
 })
-export class SideBarComponent {
+export class MobileSidebarComponent {
   @Input() chapters: Chapter[] = [];
 
   @Output() languageChangeEmitter = new EventEmitter<string>();
 
   colorSchema: string = AppComponent.COLOR_SCHEMA;
 
-  offsetLeft: number = -50;
+  offsetLeft: number = 20;
   showChapters: boolean = false;
   showSidebar: boolean = true;
   isEnglish: boolean = AppComponent.IS_ENGLISH;
 
   ngOnInit(): void {
-    this.setOffsetLeft(window.scrollY);
     this.isEnglish = AppComponent.IS_ENGLISH;
     this.colorSchema = AppComponent.COLOR_SCHEMA;
     if (AppComponent.IS_MOBILE) {
@@ -34,34 +33,18 @@ export class SideBarComponent {
     }
   }
 
-  @HostListener('window:scroll', ['$event'])
-  OnScroll(event: any) {
-    this.setOffsetLeft(window.scrollY);
-  }
-
-  setOffsetLeft(y: number): void {
-    if (y <= 350) {
-      this.offsetLeft = y * 0.2 - 50;
-    } else {
-      this.offsetLeft = 20;
-    }
-    if (y == 0) {
-      this.showChapters = false;
-      this.showSidebar = true;
-      if (AppComponent.IS_MOBILE) {
-        this.showSidebar = false;
-      }
-    }
-  }
-
   toggleLanguage(): void {
     this.isEnglish = !this.isEnglish;
     AppComponent.IS_ENGLISH = this.isEnglish;
     this.languageChangeEmitter.emit();
+    this.showSidebar = false;
+    this.showChapters = false;
   }
 
   goToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.showSidebar = false;
+    this.showChapters = false;
   }
 
   goToChapter(id: number): void {
@@ -70,6 +53,8 @@ export class SideBarComponent {
         window.scrollTo({ top: c.start, behavior: 'smooth' });
       }
     }
+    this.showSidebar = false;
+    this.showChapters = false;
   }
 
   toggleChapters(): void {
@@ -84,6 +69,8 @@ export class SideBarComponent {
     }
     AppComponent.COLOR_SCHEMA = this.colorSchema;
     AppComponent.setColorScheme();
+    this.showSidebar = false;
+    this.showChapters = false;
   }
 
   close(): void {

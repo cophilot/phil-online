@@ -1,0 +1,51 @@
+<div
+  *ngIf="showSidebar"
+  class="sidebar"
+  [style.height]="310 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+>
+  <div class="imgWrapper" style="top: 20px" (click)="toggleColorSchema()">
+    <img src="assets/{{ colorSchema === 'dark' ? 'dark' : 'light' }}mode.png" />
+  </div>
+
+  <div class="imgWrapper" style="top: 80px" (click)="toggleChapters()">
+    <img
+      src="assets/chapters{{ colorSchema === 'dark' ? 'dark' : 'light' }}.png"
+    />
+  </div>
+  <div class="chapters" *ngIf="showChapters">
+    <button
+      *ngFor="let chapter of chapters"
+      [style.top]="140 + chapter.id * 60 + 'px'"
+      (click)="goToChapter(chapter.id)"
+    >
+      {{ chapter.name }}
+    </button>
+  </div>
+
+  <button
+    [style.top]="140 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+    (click)="toggleLanguage()"
+  >
+    {{ isEnglish ? "deutsch" : "englisch" }}
+  </button>
+  <div
+    class="imgWrapper"
+    [style.top]="200 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+    (click)="goToTop()"
+  >
+    <img src="assets/top{{ colorSchema === 'dark' ? 'dark' : 'light' }}.png" />
+  </div>
+
+  <button
+    [style.top]="260 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+    (click)="close()"
+  >
+    close
+  </button>
+</div>
+
+<div class="burgerMenu" *ngIf="showSidebar == false" (click)="open()">
+  <div class="burgerBar"></div>
+  <div class="burgerBar"></div>
+  <div class="burgerBar"></div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, Input, HostListener } from '@angular/core';
-import { Project } from '../classes';
+import { Project } from '../utils/classes';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-project',
@@ -24,7 +25,6 @@ export class ProjectComponent {
   }
 
   setOffsetBottom(y: number): void {
-    console.log(y);
     let section = Math.floor(this.length / this.projects.length / 3);
     let dif = 300;
 
@@ -32,6 +32,9 @@ export class ProjectComponent {
 
     if (y < 0 || y > this.length) {
       this.offsetBottom = -200;
+      if (AppComponent.IS_MOBILE) {
+        this.offsetBottom = -400;
+      }
       return;
     }
 

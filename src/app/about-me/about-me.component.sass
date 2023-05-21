@@ -3,7 +3,7 @@
 
 .text
     white-space: pre-line
-    font-size: 30px
+    font-size: var(--font-size-middle)
     bottom: 0px
     left: 300px
     line-height: 1.5
@@ -15,6 +15,13 @@
     height: 35px
     background-color: var(--text-color)
     animation: blink 1s infinite
+
+@media screen and (max-width: 800px)
+    .text
+        left: 20px
+        height: 350px
+    .cursor
+        height: 30px
 
 @keyframes blink
     0%

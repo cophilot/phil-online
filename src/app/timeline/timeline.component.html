@@ -4,7 +4,7 @@
   [style.left]="offsetLeft + 'px'"
 >
   <div
-    class="pointContainer"
+    [class]="'pointContainer' + (p.active ? ' showBig' : '')"
     *ngFor="let p of points"
     [style.left]="p.id * distanceBetweenPoints + offsetLeft - 70 + 'px'"
   >

@@ -1,5 +1,6 @@
 import { Component, HostListener, Input } from '@angular/core';
-import { Chapter } from '../classes';
+import { Chapter } from '../utils/classes';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-chapter-heading',
@@ -25,24 +26,21 @@ export class ChapterHeadingComponent {
   }
 
   setOffsetTop(y: number): void {
-    /* if (y < this.start - 60) {
-      this.offsetTop = -500;
-      return;
-    } */
-    /* if (y > this.start + this.length + window.innerHeight) {
-      this.offsetTop = window.innerHeight;
-      return;
-    } */
+    let offsetTopBase = 60;
+    if (AppComponent.IS_MOBILE) {
+      offsetTopBase = 20;
+    }
+
     if (y > this.start && y < this.start + this.length) {
-      this.offsetTop = 60;
+      this.offsetTop = offsetTopBase;
       this.chapter.active = true;
     } else if (y <= this.start) {
       let dif = (this.start - y) * 0.5;
-      this.offsetTop = dif + 60;
+      this.offsetTop = dif + offsetTopBase;
       this.chapter.active = false;
     } else if (y >= this.start + this.length) {
       let dif = (this.start + this.length - y) * 0.5;
-      this.offsetTop = dif + 60;
+      this.offsetTop = dif + offsetTopBase;
       this.chapter.active = false;
     }
   }

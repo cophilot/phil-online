@@ -1,4 +1,5 @@
 import { Component, HostListener, Input } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-about-me',
@@ -29,6 +30,18 @@ export class AboutMeComponent {
   setText(y: number): void {
     let offset = 500;
 
+    let letterLength = 12;
+    let letterHeight = 45;
+    let offsetLeftLetters = 300;
+    let offsetBottomLetters = 290;
+    let offsetCursorBottomBase = 60;
+    if (AppComponent.IS_MOBILE) {
+      letterLength = 10;
+      letterHeight = 37;
+      offsetLeftLetters = 20;
+      offsetBottomLetters = 340;
+      offsetCursorBottomBase = 40;
+    }
     if (y < this.start - 500) {
       this.text = '';
       this.offsetBottom = 0;
@@ -41,22 +54,13 @@ export class AboutMeComponent {
       this.cursorVisible = true;
       this.text = this.fullText.replace(/ /g, '\u00a0');
       this.offsetBottom = (y - (this.start + this.length)) * 0.5;
-      this.offsetCursorBottom = 60 + (y - (this.start + this.length)) * 0.5;
-      this.offsetCursorLeft =
-        this.text.replace(/ /g, '').split('\n')[
-          this.text.replace(/ /g, '').split('\n').length - 1
-        ].length *
-          12 +
-        300;
+      this.offsetCursorBottom =
+        offsetCursorBottomBase + (y - (this.start + this.length)) * 0.5;
+      this.setCursorOffsetLeft(y, letterLength, offsetLeftLetters);
     } else if (y > this.start + this.length - offset) {
       this.cursorVisible = true;
       this.text = this.fullText.replace(/ /g, '\u00a0');
-      this.offsetCursorLeft =
-        this.text.replace(/ /g, '').split('\n')[
-          this.text.replace(/ /g, '').split('\n').length - 1
-        ].length *
-          12 +
-        300;
+      this.setCursorOffsetLeft(y, letterLength, offsetLeftLetters);
     } else {
       this.cursorVisible = true;
       this.offsetBottom = 0;
@@ -68,13 +72,23 @@ export class AboutMeComponent {
         )
       );
       this.text = this.text.replace(/ /g, '\u00a0');
-      this.offsetCursorLeft =
-        this.text.replace(/ /g, '').split('\n')[
-          this.text.replace(/ /g, '').split('\n').length - 1
-        ].length *
-          12 +
-        300;
-      this.offsetCursorBottom = 290 - (this.text.split('\n').length - 1) * 45;
+      this.setCursorOffsetLeft(y, letterLength, offsetLeftLetters);
+
+      this.offsetCursorBottom =
+        offsetBottomLetters - (this.text.split('\n').length - 1) * letterHeight;
     }
+  }
+
+  setCursorOffsetLeft(
+    y: number,
+    letterLength: number,
+    offsetLeftLetters: number
+  ): void {
+    this.offsetCursorLeft =
+      this.text.replace(/ /g, '').split('\n')[
+        this.text.replace(/ /g, '').split('\n').length - 1
+      ].length *
+        letterLength +
+      offsetLeftLetters;
   }
 }
