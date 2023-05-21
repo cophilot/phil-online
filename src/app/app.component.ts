@@ -19,6 +19,7 @@ export class AppComponent {
   educationTimeLine: TimelinePoint[] = [];
   skills: Skill[] = [];
   projects: Project[] = [];
+  contacts: Project[] = [];
   helpText: string = '';
   aboutMeText: string = '';
   showHelp: boolean = false;
@@ -132,6 +133,7 @@ export class AppComponent {
     this.workingLifeTimeLine = getWorkingLifeTimeline(AppComponent.IS_ENGLISH);
     this.educationTimeLine = getEducationTimeline(AppComponent.IS_ENGLISH);
     this.projects = getProjects(AppComponent.IS_ENGLISH);
+    this.contacts = getContacts(AppComponent.IS_ENGLISH);
     this.aboutMeText = getAboutMeText(AppComponent.IS_ENGLISH);
     if (AppComponent.IS_ENGLISH) {
       this.helpText = 'Scroll down to see more';
@@ -191,7 +193,7 @@ function getChapters(inEnglish: boolean): Chapter[] {
       AppComponent.CHAPTER_LENGTH
     ),
     new Chapter(
-      'working-life',
+      'work',
       start + (AppComponent.CHAPTER_LENGTH + 2000) * 2,
       AppComponent.CHAPTER_LENGTH
     ),
@@ -371,6 +373,56 @@ function getProjects(isEnglish: boolean): Project[] {
       'assets/ColorChickenLogo.png',
       'be a feathered chameleon, master the hurdles in color chicken',
       'try'
+    ),
+  ];
+}
+function getContacts(isEnglish: boolean): Project[] {
+  if (!isEnglish) {
+    return [
+      new Project(
+        'github',
+        'https://github.com/phil1436',
+        'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        'phil1436',
+        'ansehen'
+      ),
+      /* new Project(
+        'npm',
+        'https://www.npmjs.com/~pbonin',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/540px-Npm-logo.svg.png',
+        'pbonin',
+        'ansehen'
+      ), */
+      new Project(
+        'intersystems dc',
+        'https://community.intersystems.com/user/philipp-bonin',
+        'https://community.intersystems.com/sites/all/themes/intersys/images/intersystems-logo.svg',
+        'philipp bonin',
+        'ansehen'
+      ),
+    ];
+  }
+  return [
+    new Project(
+      'github',
+      'https://github.com/phil1436',
+      'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+      'phil1436',
+      'view'
+    ),
+    /* new Project(
+      'npm',
+      'https://www.npmjs.com/~pbonin',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/540px-Npm-logo.svg.png',
+      'pbonin',
+      'view'
+    ), */
+    new Project(
+      'intersystems dc',
+      'https://community.intersystems.com/user/philipp-bonin',
+      'https://community.intersystems.com/sites/all/themes/intersys/images/intersystems-logo.svg',
+      'philipp bonin',
+      'view'
     ),
   ];
 }

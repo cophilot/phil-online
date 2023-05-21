@@ -28,7 +28,7 @@
 ></app-timeline>
 <app-timeline
   [points]="workingLifeTimeLine"
-  [start]="getChapterByName('working-life', 'arbeit').start"
+  [start]="getChapterByName('work', 'arbeit').start"
   [speed]="2"
 ></app-timeline>
 
@@ -47,6 +47,11 @@
   [projects]="projects"
   [start]="getChapterByName('projects', 'projekte').start"
   [length]="getChapterByName('projects', 'projekte').length"
+></app-project>
+<app-project
+  [projects]="contacts"
+  [start]="getChapterByName('contact', 'kontakt').start"
+  [length]="getChapterByName('contact', 'kontakt').length"
 ></app-project>
 
 <p *ngIf="showHelp" class="help" (click)="hideHelp()">{{ helpText }}</p>

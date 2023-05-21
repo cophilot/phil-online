@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-
+import { AppComponent } from '../app.component';
 @Component({
   selector: 'app-background',
   templateUrl: './background.component.html',
@@ -19,18 +19,36 @@ export class BackgroundComponent {
 
   setOffsetSide(y: number): void {
     let end = 40000;
-    if (y == 0) {
-      this.offsetSide = window.innerWidth / 2 - 160;
-    } else if (y < 1000) {
-      this.offsetSide =
-        70 + ((window.innerWidth / 2 - 230) / 1000) * (1000 - y);
-    } else if (y >= end) {
-      this.offsetSide = window.innerWidth / 2 - 160;
-    } else if (y > end - 1000) {
-      this.offsetSide =
-        70 + ((window.innerWidth / 2 - 230) / 1000) * (y - (end - 1000));
+    if (AppComponent.IS_MOBILE) {
+      if (y == 0) {
+        this.offsetSide = window.innerWidth / 2 - 60;
+      } else if (y < 1000) {
+        this.offsetSide =
+          -30 + -30 + (window.innerWidth / 2 / 1000) * (1000 - y);
+        if (this.offsetSide < -30) this.offsetSide = -30;
+      } else if (y >= end) {
+        this.offsetSide = window.innerWidth / 2 - 60;
+      } else if (y > end - 1000) {
+        this.offsetSide =
+          -30 + -30 + (window.innerWidth / 2 / 1000) * (y - (end - 1000));
+        if (this.offsetSide < -30) this.offsetSide = -30;
+      } else {
+        this.offsetSide = -30;
+      }
     } else {
-      this.offsetSide = 70;
+      if (y == 0) {
+        this.offsetSide = window.innerWidth / 2 - 160;
+      } else if (y < 1000) {
+        this.offsetSide =
+          70 + ((window.innerWidth / 2 - 230) / 1000) * (1000 - y);
+      } else if (y >= end) {
+        this.offsetSide = window.innerWidth / 2 - 160;
+      } else if (y > end - 1000) {
+        this.offsetSide =
+          70 + ((window.innerWidth / 2 - 230) / 1000) * (y - (end - 1000));
+      } else {
+        this.offsetSide = 70;
+      }
     }
   }
 }

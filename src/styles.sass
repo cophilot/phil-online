@@ -7,6 +7,10 @@ body
 p,h1
     color: var(--text-color)
 
+@media screen and (max-width: 800px)
+    body
+        min-height: 40850px
+
 [data-theme="light"]
     --text-color: #0a2a43
     --bg-color: #ffebcd
@@ -22,7 +26,7 @@ p,h1
     --font-size-big: 40px
 
 [data-size="mobile"]
-    --h1-font-size: 5em
+    --h1-font-size: 3em
     --font-size-small: 20px
     --font-size-middle: 25px
     --font-size-big: 30px
