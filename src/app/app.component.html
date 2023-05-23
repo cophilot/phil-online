@@ -13,9 +13,9 @@
 <section>
   <h1>phil-online</h1>
 </section>
-<section [style.top]="40250 + 'px'">
+<!-- <section [style.top]="40250 + 'px'">
   <h1>phil-online</h1>
-</section>
+</section> -->
 <app-about-me
   [fullText]="aboutMeText"
   [start]="getChapterByName('about', 'über-mich').start"
@@ -36,6 +36,7 @@
   *ngFor="let c of chapters"
   [chapter]="c"
 ></app-chapter-heading>
+<app-chapter-heading [chapter]="endChapter"></app-chapter-heading>
 
 <app-skill
   [skills]="skills"

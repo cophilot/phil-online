@@ -14,6 +14,7 @@ export class AppComponent {
   public static IS_ENGLISH: boolean = detectLanguage();
   public static IS_MOBILE: boolean = false;
 
+  endChapter: Chapter = new Chapter('phil-online', 40000, 2000);
   chapters: Chapter[] = [];
   workingLifeTimeLine: TimelinePoint[] = [];
   educationTimeLine: TimelinePoint[] = [];

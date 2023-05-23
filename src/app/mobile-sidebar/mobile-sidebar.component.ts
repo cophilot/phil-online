@@ -33,6 +33,11 @@ export class MobileSidebarComponent {
     }
   }
 
+  @HostListener('window:scroll', ['$event'])
+  OnScroll(event: any) {
+    this.close();
+  }
+
   toggleLanguage(): void {
     this.isEnglish = !this.isEnglish;
     AppComponent.IS_ENGLISH = this.isEnglish;
