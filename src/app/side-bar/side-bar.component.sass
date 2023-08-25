@@ -1,59 +1,50 @@
 *
-    position: fixed
-    z-index: 1000
-    transition: all .2s ease-in-out
+  position: fixed
+  z-index: 1000
+  transition: all .2s ease-in-out
 
 button
-    background-color: transparent
-    color: var(--text-color)
+  background-color: transparent
+  color: var(--text-color)
+  font-size: 30px
+  text-align: left
+  border: none
+  width: 200px
+  height: 50px
+  content: attr(short-text)
+  span
     font-size: 30px
-    text-align: left
-    border: none
     width: 200px
     height: 50px
-    content: attr(short-text)
-    span
-        font-size: 30px
-        width: 200px
-        height: 50px
-        position: relative
+    position: relative
 
 button::after
-    content: attr(long-text)
-    opacity: 0
-    transition: opacity 0.5s
+  content: attr(long-text)
+  opacity: 0
+  transition: opacity 0.5s
 
 button:hover::after
-    opacity: 1
+  opacity: 1
 
 button, img
-    cursor: pointer
-    &:hover
-        animation-name: shiftAnimation
-        animation-duration: 800ms
-        animation-fill-mode: forwards
+  cursor: pointer
+  transition: transform 0.8s ease-in-out
+  &:hover
+    transform: translateX(20px)
 
 .burgerMenu
-    top: 20px
+  top: 20px
+  width: 50px
+  height: 50px
+  cursor: pointer
+  transition: transform 0.8s ease-in-out
+
+  &:hover
+    transform: translateX(20px)
+  .burgerBar
+    margin-bottom: 5px
+    position: relative
+    height: 8px
     width: 50px
-    height: 50px
-    cursor: pointer
-    &:hover
-        animation-name: shiftAnimation
-        animation-duration: 800ms
-        animation-fill-mode: forwards
-    .burgerBar
-        margin-bottom: 5px
-        position: relative
-        height: 8px
-        width: 50px
-        border-radius: 5px
-        background-color: var(--text-color)
-
-@keyframes shiftAnimation
-    0%
-        transform: translateX(0px)
-    50%
-
-    100%
-        transform: translateX(20px)
+    border-radius: 5px
+    background-color: var(--text-color)

@@ -1,97 +1,92 @@
 $point-size: 40
 
 *
-    position: fixed
+  position: fixed
 
 .line
-    width: 100%
-    height: 7px
-    background: var(--text-color)
-    bottom: 150px
+  width: 100%
+  height: 7px
+  background: var(--text-color)
+  bottom: 150px
 
 .pointContainer
-    width: 250px
-    height: 250px
-    bottom: 50px
+  width: 250px
+  height: 250px
+  bottom: 50px
 
+  .point
+    bottom: 108px
+    cursor: pointer
+    width: $point-size + px
+    height: $point-size + px
+    background: var(--bg-color)
+    border: 4px solid var(--text-color)
+    border-radius: 50%
+    transform: translateY(calc( $point-size / -2 ) + px)
+    cursor: default
+    color: var(--text-color)
+  .pointName
+    top: -50px
+    font-size: var(--font-size-middle)
+    left: -10px
+    width: 400px
+    cursor: pointer
+  .pointDescription
+    font-size: var(--font-size-small)
+    width: 300px
+    top: -40px
+    opacity: 0
+    left: -20px
+    cursor: pointer
+  .pointDate
+    font-size: var(--font-size-small)
+    width: 300px
+    top: 60px
+    left: -40px
+  &:hover
     .point
-        bottom: 108px
-        cursor: pointer
-        width: $point-size + px
-        height: $point-size + px
-        background: var(--bg-color)
-        border: 4px solid var(--text-color)
-        border-radius: 50%
-        transform: translateY(calc( $point-size / -2 ) + px)
-        cursor: default
-        color: var(--text-color)
-
+      animation: largePoint 0.8s ease-in-out forwards
     .pointName
-        top: -50px
-        font-size: var(--font-size-middle)
-        left: -10px
-        width: 400px
-        cursor: pointer
-
+      animation: transformName 0.8s ease-in-out forwards
     .pointDescription
-        font-size: var(--font-size-small)
-        width: 300px
-        top: -40px
-        opacity: 0
-        left: -20px
-        cursor: pointer
-
+      animation: displayDescription 0.8s ease-in-out forwards
     .pointDate
-        font-size: var(--font-size-small)
-        width: 300px
-        top: 60px
-        left: -40px
-
-    &:hover
-        .point
-            animation: largePoint 0.8s ease-in-out forwards
-        .pointName
-
-            animation: transformName 0.8s ease-in-out forwards
-        .pointDescription
-            animation: displayDescription 0.8s ease-in-out forwards
-        .pointDate
-            animation: transformDate 0.8s ease-in-out forwards
+      animation: transformDate 0.8s ease-in-out forwards
 
 .showBig
-    .point
-        animation: largePoint 0.4s ease-in-out forwards
-    .pointName
-        animation: transformName 0.4s ease-in-out forwards
-    .pointDescription
-        animation: displayDescription 0.4s ease-in-out forwards
-    .pointDate
-        animation: transformDate 0.4s ease-in-out forwards
+  .point
+    animation: largePoint 0.8s ease-in-out forwards
+  .pointName
+    animation: transformName 0.4s ease-in-out forwards
+  .pointDescription
+    animation: displayDescription 0.4s ease-in-out forwards
+  .pointDate
+    animation: transformDate 0.4s ease-in-out forwards
 
 @keyframes largePoint
-    0%
-    100%
-        width: $point-size * 1.3 + px
-        height: $point-size * 1.3 + px
-        transform: translateY( $point-size / -3 + px)
+  0%
+  100%
+    width: $point-size * 1.3 + px
+    height: $point-size * 1.3 + px
+    transform: translateY( $point-size / -3 + px)
 
 @keyframes displayDescription
-    0%
-    100%
-        opacity: 0.5
+  0%
+  100%
+    opacity: 0.5
 
 @keyframes transformName
-    0%
+  0%
 
-    100%
-        top: -100px
-        font-size: var(--font-size-big)
-        left: -20px
+  100%
+    top: -100px
+    font-size: var(--font-size-big)
+    left: -20px
 
 @keyframes transformDate
-    0%
+  0%
 
-    100%
-        top: 80px
-        font-size: var(--font-size-middle)
-        left: -60px
+  100%
+    top: 80px
+    font-size: var(--font-size-middle)
+    left: -60px

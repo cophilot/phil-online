@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { Chapter } from '../utils/classes';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -24,6 +25,8 @@ export class SideBarComponent {
   showChapters: boolean = false;
   showSidebar: boolean = true;
   isEnglish: boolean = AppComponent.IS_ENGLISH;
+
+  constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit(): void {
     this.setOffsetLeft(window.scrollY);
@@ -57,6 +60,7 @@ export class SideBarComponent {
   toggleLanguage(): void {
     this.isEnglish = !this.isEnglish;
     AppComponent.IS_ENGLISH = this.isEnglish;
+    this.localStorageService.setLanguage(this.isEnglish ? 'en' : 'de');
     this.languageChangeEmitter.emit();
   }
 
@@ -83,6 +87,7 @@ export class SideBarComponent {
       this.colorSchema = 'dark';
     }
     AppComponent.COLOR_SCHEMA = this.colorSchema;
+    this.localStorageService.setTheme(this.colorSchema);
     AppComponent.setColorScheme();
   }
 

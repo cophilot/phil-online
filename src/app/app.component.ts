@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Chapter, TimelinePoint, Skill, Project } from './utils/classes';
+import { LocalStorageService } from './services/local-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
 
   public static COLOR_SCHEMA: string = 'dark';
   public static CHAPTER_LENGTH: number = 3000;
-  public static IS_ENGLISH: boolean = detectLanguage();
+  public static IS_ENGLISH: boolean = false;
   public static IS_MOBILE: boolean = false;
 
   endChapter: Chapter = new Chapter('phil-online', 40000, 2000);
@@ -26,10 +27,30 @@ export class AppComponent {
   showHelp: boolean = false;
   isMobile: boolean = false;
   yStartPosition: number = 0;
-  constructor() {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit(): void {
-    AppComponent.COLOR_SCHEMA = this.detectPrefersColorScheme();
+    if (this.localStorageService.getLanguage() == null) {
+      AppComponent.IS_ENGLISH = detectLanguage();
+      this.localStorageService.setLanguage(
+        AppComponent.IS_ENGLISH ? 'en' : 'de'
+      );
+    } else {
+      AppComponent.IS_ENGLISH = this.localStorageService.getLanguage() == 'en';
+    }
+
+    if (this.localStorageService.getTheme() != null) {
+      const theme = this.localStorageService.getTheme();
+      if (theme != null) {
+        AppComponent.COLOR_SCHEMA = theme;
+      } else {
+        AppComponent.COLOR_SCHEMA = this.detectPrefersColorScheme();
+        this.localStorageService.setTheme(AppComponent.COLOR_SCHEMA);
+      }
+    } else {
+      AppComponent.COLOR_SCHEMA = this.detectPrefersColorScheme();
+      this.localStorageService.setTheme(AppComponent.COLOR_SCHEMA);
+    }
     this.setMobileVersion();
 
     getChapters(false).forEach((chapter) => {
@@ -66,6 +87,7 @@ export class AppComponent {
     this.setLanguage();
     this.skills = getSkills();
     this.yStartPosition = window.scrollY;
+
     setTimeout(() => {
       if (window.scrollY == this.yStartPosition) {
         this.showHelp = true;
