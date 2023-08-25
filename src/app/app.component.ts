@@ -317,9 +317,9 @@ function getProjects(isEnglish: boolean): Project[] {
         'ansehen'
       ),
       new Project(
-        'ownvscodeextension',
-        'https://github.com/phil1436/ownvscodeextension',
-        'https://raw.githubusercontent.com/phil1436/ownvscodeextension/master/resources/logo.png',
+        'vstoolkit',
+        'https://github.com/phil1436/VSToolKit',
+        'https://raw.githubusercontent.com/phil1436/VSToolKit/main/assets/logo.png',
         'bereitstellung von tools für visual studio code',
         'ansehen'
       ),
@@ -335,6 +335,13 @@ function getProjects(isEnglish: boolean): Project[] {
         'https://colorchicken.philipp-bonin.com/',
         'assets/ColorChickenLogo.png',
         'sei ein gefiedertes chamäleon und meistere die hürden in color-chicken',
+        'versuchen'
+      ),
+      new Project(
+        'giggletiggle',
+        'https://giggle-tiggle.philipp-bonin.com/',
+        'https://raw.githubusercontent.com/phil1436/GiggleTiggle/master/src/assets/logo_small.png',
+        'eigentlich nur tinder für witze... falls du es brauchst...',
         'versuchen'
       ),
     ];
@@ -355,9 +362,9 @@ function getProjects(isEnglish: boolean): Project[] {
       'view'
     ),
     new Project(
-      'ownvscodeextension',
-      'https://github.com/phil1436/ownvscodeextension',
-      'https://raw.githubusercontent.com/phil1436/ownvscodeextension/master/resources/logo.png',
+      'vstoolkit',
+      'https://github.com/phil1436/VSToolKit',
+      'https://raw.githubusercontent.com/phil1436/VSToolKit/main/assets/logo.png',
       'providing tools for visual studio code',
       'view'
     ),
@@ -373,6 +380,13 @@ function getProjects(isEnglish: boolean): Project[] {
       'https://colorchicken.philipp-bonin.com/',
       'assets/ColorChickenLogo.png',
       'be a feathered chameleon, master the hurdles in color chicken',
+      'try'
+    ),
+    new Project(
+      'giggletiggle',
+      'https://giggle-tiggle.philipp-bonin.com/',
+      'https://raw.githubusercontent.com/phil1436/GiggleTiggle/master/src/assets/logo_small.png',
+      'actually just tinder for jokes... in case you need it...',
       'try'
     ),
   ];
