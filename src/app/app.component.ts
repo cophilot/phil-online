@@ -86,13 +86,18 @@ export class AppComponent {
     AppComponent.setColorScheme();
     this.setLanguage();
     this.skills = getSkills();
+    this.setShadow();
     this.yStartPosition = window.scrollY;
 
-    setTimeout(() => {
-      if (window.scrollY == this.yStartPosition) {
-        this.showHelp = true;
-      }
-    }, 10000);
+    const needHelp = this.localStorageService.getNeedHelp();
+
+    if (needHelp == null || needHelp == 'true') {
+      setTimeout(() => {
+        if (window.scrollY == this.yStartPosition) {
+          this.showHelp = true;
+        }
+      }, 10000);
+    }
   }
 
   darkMode() {
@@ -118,6 +123,7 @@ export class AppComponent {
       document.documentElement.setAttribute('data-theme', 'light');
     }
   }
+
   setMobileVersion(): void {
     if (window.innerWidth < 800) {
       document.documentElement.setAttribute('data-size', 'mobile');
@@ -127,6 +133,10 @@ export class AppComponent {
       AppComponent.IS_MOBILE = false;
     }
     this.isMobile = AppComponent.IS_MOBILE;
+  }
+
+  setShadow(): void {
+    document.documentElement.setAttribute('data-shadow', 'on');
   }
 
   detectPrefersColorScheme(): string {

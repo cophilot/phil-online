@@ -21,4 +21,8 @@ export class LocalStorageService {
   setTheme(theme: string): void {
     localStorage.setItem('theme', theme);
   }
+
+  getNeedHelp(): string | null {
+    return localStorage.getItem('needHelp');
+  }
 }

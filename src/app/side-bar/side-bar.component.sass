@@ -12,6 +12,7 @@ button
   width: 200px
   height: 50px
   content: attr(short-text)
+  text-shadow: var(--shadow-small)
   span
     font-size: 30px
     width: 200px
@@ -32,6 +33,10 @@ button, img
   &:hover
     transform: translateX(20px)
 
+img
+  -webkit-filter: drop-shadow(var(--shadow-small))
+  filter: drop-shadow(var(--shadow-small))
+
 .burgerMenu
   top: 20px
   width: 50px
@@ -48,3 +53,4 @@ button, img
     width: 50px
     border-radius: 5px
     background-color: var(--text-color)
+    box-shadow: var(--shadow-small)

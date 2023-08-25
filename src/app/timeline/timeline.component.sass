@@ -8,6 +8,7 @@ $point-size: 40
   height: 7px
   background: var(--text-color)
   bottom: 150px
+  box-shadow: var(--shadow-small)
 
 .pointContainer
   width: 250px
@@ -25,12 +26,15 @@ $point-size: 40
     transform: translateY(calc( $point-size / -2 ) + px)
     cursor: default
     color: var(--text-color)
+    box-shadow: var(--shadow-small)
+
   .pointName
     top: -50px
     font-size: var(--font-size-middle)
     left: -10px
     width: 400px
     cursor: pointer
+    text-shadow: var(--shadow-small)
   .pointDescription
     font-size: var(--font-size-small)
     width: 300px
@@ -38,7 +42,10 @@ $point-size: 40
     opacity: 0
     left: -20px
     cursor: pointer
+    text-shadow: var(--shadow-small)
+
   .pointDate
+    text-shadow: var(--shadow-small)
     font-size: var(--font-size-small)
     width: 300px
     top: 60px

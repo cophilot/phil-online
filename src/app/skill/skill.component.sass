@@ -1,31 +1,37 @@
 *
-    position: fixed
-    height: 100px
-    width: 100px
-    z-index: 1
+  position: fixed
+  height: 100px
+  width: 100px
+  z-index: 1
 
 .skill
+  img
+    -webkit-filter: drop-shadow(var(--shadow-small))
+    filter: drop-shadow(var(--shadow-small))
+  .skillName
+    font-size: var(--font-size-middle)
+    left: 50%
+    transform: translate(-50%, 0)
+    text-align: center
+    bottom: -50px
+    width: 200px
+    display: none
+    text-shadow: var(--shadow-small)
+  &:hover
     .skillName
-        font-size: var(--font-size-middle)
-        left: 50%
-        transform: translate(-50%, 0)
-        text-align: center
-        bottom: -50px
-        width: 200px
-        display: none
-    &:hover
-        .skillName
-            display: block
-        .skillImg
-            transform: scale(1.2)
+      display: block
+    .skillImg
+      transform: scale(1.2)
+      -webkit-filter: drop-shadow(var(--shadow))
+      filter: drop-shadow(var(--shadow))
 
 @media screen and (max-width: 800px)
-    *
-        height: 70px
-        width: 70px
-    .skill
-        &:hover
-            .skillName
-                display: none
-            .skillImg
-                transform: scale(1)
+  *
+    height: 70px
+    width: 70px
+  .skill
+    &:hover
+      .skillName
+        display: none
+      .skillImg
+        transform: scale(1)
