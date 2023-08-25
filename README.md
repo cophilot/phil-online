@@ -34,4 +34,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 by [Philipp B.](https://github.com/phil1436)
 
-<!-- ng deploy --base-href=https://philipp-bonin.com --cname=philipp-bonin.com -->
+<!-- ng deploy --base-href=https://philipp-bonin.com --cname=philipp-bonin.com test-->
