@@ -2,7 +2,7 @@
 <div
   *ngIf="showSidebar"
   class="sidebar"
-  [style.height]="310 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+  [style.height]="370 + (showChapters ? chapters.length * 60 : 0) + 'px'"
 >
   <button style="top: 20px">phil-online</button>
   <div class="imgWrapper" style="top: 80px" (click)="toggleColorSchema()">
@@ -36,6 +36,15 @@
     (click)="goToTop()"
   >
     <img src="assets/top{{ colorSchema === 'dark' ? 'dark' : 'light' }}.png" />
+  </div>
+  <div
+    class="imgWrapper"
+    [style.top]="320 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+    (click)="goToShell()"
+  >
+    <img
+      src="assets/shell{{ colorSchema === 'dark' ? 'dark' : 'light' }}.png"
+    />
   </div>
 </div>
 

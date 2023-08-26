@@ -67,6 +67,9 @@ export class SideBarComponent {
   goToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+  goToShell() {
+    window.location.href = 'https://shell.philipp-bonin.com/';
+  }
 
   goToChapter(id: number): void {
     for (let c of this.chapters) {

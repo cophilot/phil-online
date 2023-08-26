@@ -39,9 +39,15 @@
     [style.left]="offsetLeft + 'px'"
     (click)="goToTop()"
   />
+  <img
+    src="assets/shell{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
+    [style.top]="260 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+    [style.left]="offsetLeft + 'px'"
+    (click)="goToShell()"
+  />
 
   <button
-    [style.top]="260 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+    [style.top]="320 + (showChapters ? chapters.length * 60 : 0) + 'px'"
     [style.left]="offsetLeft + 10 + 'px'"
     (click)="close()"
   >

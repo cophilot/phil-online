@@ -90,4 +90,7 @@ export class MobileSidebarComponent {
   open(): void {
     this.showSidebar = true;
   }
+  goToShell() {
+    window.location.href = 'https://shell.philipp-bonin.com/';
+  }
 }
