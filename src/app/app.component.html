@@ -25,11 +25,13 @@
   [points]="educationTimeLine"
   [start]="getChapterByName('education', 'ausbildung').start"
   [speed]="1"
+  [backwards]="true"
 ></app-timeline>
 <app-timeline
   [points]="workingLifeTimeLine"
   [start]="getChapterByName('work', 'arbeit').start"
   [speed]="2"
+  [backwards]="false"
 ></app-timeline>
 
 <app-chapter-heading

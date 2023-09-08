@@ -370,6 +370,13 @@ function getProjects(isEnglish: boolean): Project[] {
         'versuchen'
       ),
       new Project(
+        'orbitlab',
+        'https://orbitlab.philipp-bonin.com/',
+        'https://raw.githubusercontent.com/phil1436/OrbitLab/master/src/assets/logo_small.png',
+        'eine webanwendung zur simulation von orbits',
+        'versuchen'
+      ),
+      new Project(
         'giggletiggle',
         'https://giggle-tiggle.philipp-bonin.com/',
         'https://raw.githubusercontent.com/phil1436/GiggleTiggle/master/src/assets/logo_small.png',
@@ -412,6 +419,13 @@ function getProjects(isEnglish: boolean): Project[] {
       'https://colorchicken.philipp-bonin.com/',
       'assets/ColorChickenLogo.png',
       'be a feathered chameleon, master the hurdles in color chicken',
+      'try'
+    ),
+    new Project(
+      'orbitlab',
+      'https://orbitlab.philipp-bonin.com/',
+      'https://raw.githubusercontent.com/phil1436/OrbitLab/master/src/assets/logo_small.png',
+      'a webapplication to simulate orbits',
       'try'
     ),
     new Project(

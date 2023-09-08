@@ -13,6 +13,7 @@ export class TimelineComponent {
 
   @Input() start: number = 2000;
   @Input() speed: number = 1;
+  @Input() backwards: boolean = false;
 
   offsetLeft: number = window.innerWidth + 200;
 
@@ -29,7 +30,14 @@ export class TimelineComponent {
   }
 
   setOffsetLeft(y: number): void {
-    this.offsetLeft = window.innerWidth + 200 - (y - this.start) * this.speed;
+    if (this.backwards) {
+      this.offsetLeft =
+        -200 -
+        this.distanceBetweenPoints * (this.points.length - 1) +
+        (y - this.start) * this.speed;
+    } else {
+      this.offsetLeft = window.innerWidth + 200 - (y - this.start) * this.speed;
+    }
 
     for (let i = 0; i < this.points.length; i++) {
       if (i * this.distanceBetweenPoints + this.offsetLeft < 300) {
