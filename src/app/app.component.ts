@@ -376,13 +376,13 @@ function getProjects(isEnglish: boolean): Project[] {
         'eine webanwendung zur simulation von orbits',
         'versuchen'
       ),
-      new Project(
+      /* new Project(
         'giggletiggle',
         'https://giggle-tiggle.philipp-bonin.com/',
         'https://raw.githubusercontent.com/phil1436/GiggleTiggle/master/src/assets/logo_small.png',
         'eigentlich nur tinder für witze... falls du es brauchst...',
         'versuchen'
-      ),
+      ), */
     ];
   }
   return [
@@ -428,13 +428,13 @@ function getProjects(isEnglish: boolean): Project[] {
       'a webapplication to simulate orbits',
       'try'
     ),
-    new Project(
+    /* new Project(
       'giggletiggle',
       'https://giggle-tiggle.philipp-bonin.com/',
       'https://raw.githubusercontent.com/phil1436/GiggleTiggle/master/src/assets/logo_small.png',
       'actually just tinder for jokes... in case you need it...',
       'try'
-    ),
+    ), */
   ];
 }
 function getContacts(isEnglish: boolean): Project[] {
