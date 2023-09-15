@@ -4,7 +4,14 @@
   class="sidebar"
   [style.height]="370 + (showChapters ? chapters.length * 60 : 0) + 'px'"
 >
-  <button style="top: 20px">phil-online</button>
+  <!-- <button style="top: 20px">phil-online</button> -->
+  <div class="imgWrapper" style="top: 20px" (click)="goToTop()">
+    <img
+      src="https://raw.githubusercontent.com/phil1436/phil-online/master/src/assets/logoPhilOnline.png"
+      alt="phil-online"
+      [style.margin-top.px]="-10"
+    />
+  </div>
   <div class="imgWrapper" style="top: 80px" (click)="toggleColorSchema()">
     <img src="assets/{{ colorSchema === 'dark' ? 'dark' : 'light' }}mode.png" />
   </div>
