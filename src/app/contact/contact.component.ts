@@ -3,11 +3,11 @@ import { Project } from '../utils/classes';
 import { AppComponent } from '../app.component';
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './project.component.html',
-  styleUrls: ['./project.component.sass'],
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.sass'],
 })
-export class ProjectComponent {
+export class ContactComponent {
   @Input() start: number = 2000;
   @Input() length: number = 3000;
 
@@ -22,22 +22,6 @@ export class ProjectComponent {
   @HostListener('window:scroll', ['$event'])
   OnScroll(event: any) {
     this.setOffsetBottom(window.scrollY);
-  }
-
-  getTopicsAsString(project: any): string {
-    let topics = project.topics;
-    if (topics === undefined) {
-      return '';
-    }
-    let r = '';
-    for (let topic of topics) {
-      r += '#' + topic.toLowerCase() + ' ';
-    }
-    return r;
-  }
-
-  isEnglish(): boolean {
-    return AppComponent.IS_ENGLISH;
   }
 
   setOffsetBottom(y: number): void {

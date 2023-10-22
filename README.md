@@ -1,6 +1,6 @@
 <div align="center">
     <br />
-    <img src="https://raw.githubusercontent.com/phil1436/phil-online/master/src/assets/logoPhilOnline.png" alt="phil-onlineLogo" width="30%"/>
+    <img src="src/assets/logoPhilOnline.png" alt="phil-onlineLogo" width="30%"/>
     <h1>phil-online</h1>
     <p>
         A simple personal website to show my projects and stuff.
@@ -24,7 +24,7 @@
 
 ---
 
-View the Application [here](https://phil1436.github.io/).
+View the Application [here](https://philipp-bonin.com/).
 
 ---
 

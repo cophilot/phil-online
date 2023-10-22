@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { Chapter, TimelinePoint, Skill, Project } from './utils/classes';
 import { LocalStorageService } from './services/local-storage.service';
+import { ContentService } from './services/content.service';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,13 @@ export class AppComponent {
   showHelp: boolean = false;
   isMobile: boolean = false;
   yStartPosition: number = 0;
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(private localStorageService: LocalStorageService) {
+    ContentService.init();
+  }
+
+  getProjects(): any[] {
+    return ContentService.getProjects();
+  }
 
   ngOnInit(): void {
     if (this.localStorageService.getLanguage() == null) {
@@ -38,7 +45,7 @@ export class AppComponent {
     } else {
       AppComponent.IS_ENGLISH = this.localStorageService.getLanguage() == 'en';
     }
-
+    ContentService.getProjects();
     if (this.localStorageService.getTheme() != null) {
       const theme = this.localStorageService.getTheme();
       if (theme != null) {
@@ -96,7 +103,7 @@ export class AppComponent {
         if (window.scrollY == this.yStartPosition) {
           this.showHelp = true;
         }
-      }, 10000);
+      }, 20000);
     }
   }
 
@@ -331,7 +338,10 @@ function getWorkingLifeTimeline(inEnglish: boolean): TimelinePoint[] {
   ];
 }
 
-function getProjects(isEnglish: boolean): Project[] {
+function getProjects(isEnglish: boolean): any[] {
+  let projects = ContentService.getProjects();
+  console.log(projects);
+  return projects;
   if (!isEnglish) {
     return [
       new Project(
@@ -443,7 +453,7 @@ function getContacts(isEnglish: boolean): Project[] {
       new Project(
         'e-mail',
         'mailto:phil.likes.coding@gmail.com',
-        'https://www.designbust.com/download/1026/png/email_icon_transparent_background512.png',
+        'assets/mail_icon.png',
         'phil.likes.coding@gmail.com',
         'öffnen'
       ),
@@ -474,7 +484,7 @@ function getContacts(isEnglish: boolean): Project[] {
     new Project(
       'e-mail',
       'mailto:phil.likes.coding@gmail.com',
-      'https://www.designbust.com/download/1026/png/email_icon_transparent_background512.png',
+      'assets/mail_icon.png',
       'phil.likes.coding@gmail.com',
       'open'
     ),

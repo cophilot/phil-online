@@ -1,13 +1,24 @@
 <div
-  *ngFor="let p of projects"
+  *ngFor="let project of projects"
   [style.bottom]="offsetBottom + 'px'"
   class="container"
-  [style.display]="p.active ? 'block' : 'none'"
+  [style.display]="project.active ? 'block' : 'none'"
 >
-  <img [src]="p.img" [alt]="p.name" />
+  <img
+    [src]="
+      project.logo_small_url == '' ? project.logo_url : project.logo_small_url
+    "
+    [alt]="project.name"
+    class="logo"
+  />
   <div class="project">
-    <p class="name">{{ p.name }}</p>
-    <p class="description">{{ p.description }}</p>
-    <a [href]="p.url" target="_blank">{{ p.buttonText }}</a>
+    <p class="name">{{ project.name }}</p>
+    <p class="topics">
+      {{ getTopicsAsString(project) }}
+    </p>
+    <p class="description">{{ project.description }}</p>
+    <a [href]="project.url" target="_blank">{{
+      isEnglish() ? "View" : "Ansehen"
+    }}</a>
   </div>
 </div>

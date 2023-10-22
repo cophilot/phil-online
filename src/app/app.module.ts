@@ -11,6 +11,7 @@ import { SkillComponent } from './skill/skill.component';
 import { ProjectComponent } from './project/project.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MobileSidebarComponent } from './mobile-sidebar/mobile-sidebar.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MobileSidebarComponent } from './mobile-sidebar/mobile-sidebar.componen
     ProjectComponent,
     AboutMeComponent,
     MobileSidebarComponent,
+    ContactComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
