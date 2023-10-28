@@ -12,11 +12,13 @@
     class="logo"
   />
   <div class="project">
-    <p class="name">{{ project.name }}</p>
-    <p class="topics">
-      {{ getTopicsAsString(project) }}
-    </p>
-    <p class="description">{{ project.description }}</p>
+    <div class="textBox">
+      <p class="name">{{ project.name }}</p>
+      <p class="topics">
+        {{ getTopicsAsString(project) }}
+      </p>
+      <p class="description">{{ project.description }}</p>
+    </div>
     <a [href]="project.url" target="_blank">{{
       isEnglish() ? "View" : "Ansehen"
     }}</a>

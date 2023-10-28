@@ -16,38 +16,37 @@
   height: 200px
 
 .project
-  .name
-    font-size: var(--font-size-big)
-    left: 50%
-    transform: translateX(-50%)
-    height: 100px
-    cursor: default
-    transition: all .5s ease-in-out
-    margin-top: 70px
-    text-align: center
-    /* text-shadow: var(--shadow-small) */
-  .topics
-    display: flex
-    justify-content: center
-    left: 50%
-    transform: translateX(-50%)
-    margin-top: 130px
-    width: 400px
-    text-align: center
-    opacity: 0.5
-    font-size: var(--font-size-small)
-
-  .description
-    font-size: var(--font-size-middle)
-    left: 50%
-    transform: translateX(-50%)
-    height: 100px
-    cursor: default
-    opacity: 1
-    transition: all .5s ease-in-out
-    margin-top: 200px
-    text-align: center
-    /* text-shadow: var(--shadow-small) */
+  .textBox
+    .name
+      font-size: var(--font-size-big)
+      left: 50%
+      transform: translateX(-50%)
+      height: 100px
+      cursor: default
+      transition: all .5s ease-in-out
+      margin-top: 70px
+      text-align: center
+      /* text-shadow: var(--shadow-small) */
+    .topics
+      display: flex
+      justify-content: center
+      left: 50%
+      transform: translateX(-50%)
+      margin-top: 130px
+      width: 600px
+      text-align: center
+      opacity: 0.5
+      font-size: var(--font-size-extra-small)
+    .description
+      width: 600px
+      font-size: var(--font-size-middle)
+      left: 50%
+      transform: translateX(-50%)
+      cursor: default
+      opacity: 1
+      transition: all .5s ease-in-out
+      margin-top: 200px
+      text-align: center
 
 a
   text-decoration: none
@@ -84,15 +83,16 @@ a
       transform: translateX(-50%)
       scale: 1
   .project
-    .name
-      margin-top: 10px
-    .topics
-      margin-top: 50px
-      width: 90%
-    .description
-      opacity: 0.5
-      width: 90%
-      margin-top: 120px
+    .textBox
+      .name
+        margin-top: 10px
+      .topics
+        margin-top: 60px
+        width: 90%
+      .description
+        width: 90%
+        margin-top: 120px
+        font-size: var(--font-size-small)
   a
     right: 15%
     margin-top: 200px

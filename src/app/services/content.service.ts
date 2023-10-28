@@ -16,7 +16,7 @@ export class ContentService {
     if (ContentService.initial) {
       return;
     }
-    await this.initProjects();
+    this.initProjects();
     ContentService.initial = true;
   }
 
@@ -48,8 +48,7 @@ export class ContentService {
 
   static getProjects(): any[] {
     this.init();
-    let r = this.getJSONPropsByLanguage(this.projects);
-    return r;
+    return this.getJSONPropsByLanguage(this.projects);
   }
 
   static getJSONPropsByLanguage(json: any): any[] {

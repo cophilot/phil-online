@@ -172,7 +172,6 @@ export class AppComponent {
     this.chapters = getChapters(AppComponent.IS_ENGLISH);
     this.workingLifeTimeLine = getWorkingLifeTimeline(AppComponent.IS_ENGLISH);
     this.educationTimeLine = getEducationTimeline(AppComponent.IS_ENGLISH);
-    this.projects = getProjects(AppComponent.IS_ENGLISH);
     this.contacts = getContacts(AppComponent.IS_ENGLISH);
     this.aboutMeText = getAboutMeText(AppComponent.IS_ENGLISH);
     if (AppComponent.IS_ENGLISH) {
@@ -338,115 +337,6 @@ function getWorkingLifeTimeline(inEnglish: boolean): TimelinePoint[] {
   ];
 }
 
-function getProjects(isEnglish: boolean): any[] {
-  let projects = ContentService.getProjects();
-  console.log(projects);
-  return projects;
-  if (!isEnglish) {
-    return [
-      new Project(
-        'ownobjectscriptextension',
-        'https://github.com/phil1436/ownobjectscriptextension',
-        'https://raw.githubusercontent.com/phil1436/ownobjectscriptextension/master/resources/logo.png',
-        'eine visual studio code erweiterung, die tools für intersystems objectscript bereitstellt',
-        'ansehen'
-      ),
-      new Project(
-        'owngitextension',
-        'https://github.com/phil1436/owngitextension',
-        'https://raw.githubusercontent.com/phil1436/owngitextension/main/resources/logo.png',
-        'eine visual studio code erweiterung, die tools für die arbeit mit github-projekten bietet',
-        'ansehen'
-      ),
-      new Project(
-        'vstoolkit',
-        'https://github.com/phil1436/VSToolKit',
-        'https://raw.githubusercontent.com/phil1436/VSToolKit/main/assets/logo.png',
-        'bereitstellung von tools für visual studio code',
-        'ansehen'
-      ),
-      new Project(
-        'petgram',
-        'https://petgram.philipp-bonin.com/',
-        'assets/PetgramLogo.png',
-        'hier gibt es nichts zu sehen, nur eine social-media-seite für haustiere',
-        'versuchen'
-      ),
-      new Project(
-        'color chicken',
-        'https://colorchicken.philipp-bonin.com/',
-        'assets/ColorChickenLogo.png',
-        'sei ein gefiedertes chamäleon und meistere die hürden in color-chicken',
-        'versuchen'
-      ),
-      new Project(
-        'orbitlab',
-        'https://orbitlab.philipp-bonin.com/',
-        'https://raw.githubusercontent.com/phil1436/OrbitLab/master/src/assets/logo_small.png',
-        'eine webanwendung zur simulation von orbits',
-        'versuchen'
-      ),
-      /* new Project(
-        'giggletiggle',
-        'https://giggle-tiggle.philipp-bonin.com/',
-        'https://raw.githubusercontent.com/phil1436/GiggleTiggle/master/src/assets/logo_small.png',
-        'eigentlich nur tinder für witze... falls du es brauchst...',
-        'versuchen'
-      ), */
-    ];
-  }
-  return [
-    new Project(
-      'ownobjectscriptextension',
-      'https://github.com/phil1436/ownobjectscriptextension',
-      'https://raw.githubusercontent.com/phil1436/ownobjectscriptextension/master/resources/logo.png',
-      'a visual studio code extension that supplies tools for intersystems objectscript',
-      'view'
-    ),
-    new Project(
-      'owngitextension',
-      'https://github.com/phil1436/owngitextension',
-      'https://raw.githubusercontent.com/phil1436/owngitextension/main/resources/logo.png',
-      'a visual studio code extension that offers tools for working with github projects',
-      'view'
-    ),
-    new Project(
-      'vstoolkit',
-      'https://github.com/phil1436/VSToolKit',
-      'https://raw.githubusercontent.com/phil1436/VSToolKit/main/assets/logo.png',
-      'providing tools for visual studio code',
-      'view'
-    ),
-    new Project(
-      'petgram',
-      'https://petgram.philipp-bonin.com/',
-      'assets/PetgramLogo.png',
-      'nothing to see here, just a social media site for pets',
-      'try'
-    ),
-    new Project(
-      'color chicken',
-      'https://colorchicken.philipp-bonin.com/',
-      'assets/ColorChickenLogo.png',
-      'be a feathered chameleon, master the hurdles in color chicken',
-      'try'
-    ),
-    new Project(
-      'orbitlab',
-      'https://orbitlab.philipp-bonin.com/',
-      'https://raw.githubusercontent.com/phil1436/OrbitLab/master/src/assets/logo_small.png',
-      'a webapplication to simulate orbits',
-      'try'
-    ),
-    /* new Project(
-      'giggletiggle',
-      'https://giggle-tiggle.philipp-bonin.com/',
-      'https://raw.githubusercontent.com/phil1436/GiggleTiggle/master/src/assets/logo_small.png',
-      'actually just tinder for jokes... in case you need it...',
-      'try'
-    ), */
-  ];
-}
 function getContacts(isEnglish: boolean): Project[] {
   if (!isEnglish) {
     return [
@@ -460,22 +350,8 @@ function getContacts(isEnglish: boolean): Project[] {
       new Project(
         'github',
         'https://github.com/phil1436',
-        'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+        'assets/github_icon.png',
         'phil1436',
-        'ansehen'
-      ),
-      /* new Project(
-        'npm',
-        'https://www.npmjs.com/~pbonin',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/540px-Npm-logo.svg.png',
-        'pbonin',
-        'ansehen'
-      ), */
-      new Project(
-        'intersystems dc',
-        'https://community.intersystems.com/user/philipp-bonin',
-        'https://community.intersystems.com/sites/all/themes/intersys/images/intersystems-logo.svg',
-        'philipp bonin',
         'ansehen'
       ),
     ];
@@ -491,22 +367,8 @@ function getContacts(isEnglish: boolean): Project[] {
     new Project(
       'github',
       'https://github.com/phil1436',
-      'https://cdn-icons-png.flaticon.com/512/25/25231.png',
+      'assets/github_icon.png',
       'phil1436',
-      'view'
-    ),
-    /* new Project(
-      'npm',
-      'https://www.npmjs.com/~pbonin',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/540px-Npm-logo.svg.png',
-      'pbonin',
-      'view'
-    ), */
-    new Project(
-      'intersystems dc',
-      'https://community.intersystems.com/user/philipp-bonin',
-      'https://community.intersystems.com/sites/all/themes/intersys/images/intersystems-logo.svg',
-      'philipp bonin',
       'view'
     ),
   ];
@@ -616,12 +478,19 @@ function getSkills() {
     ),
     //second row
     new Skill(
+      'docker',
+      'https://www.docker.com/',
+      'https://cdn.icon-icons.com/icons2/2415/PNG/512/docker_plain_wordmark_logo_icon_146555.png',
+      600,
+      y + 120
+    ),
+    /*  new Skill(
       'vscode',
       'https://code.visualstudio.com/',
       'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png',
       600,
       y + 120
-    ),
+    ), */
     new Skill(
       'java',
       'https://www.java.com',
