@@ -14,21 +14,21 @@ import { MobileSidebarComponent } from './mobile-sidebar/mobile-sidebar.componen
 import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SideBarComponent,
-    BackgroundComponent,
-    MailFormComponent,
-    ChapterHeadingComponent,
-    TimelineComponent,
-    SkillComponent,
-    ProjectComponent,
-    AboutMeComponent,
-    MobileSidebarComponent,
-    ContactComponent,
-  ],
-  imports: [BrowserModule, FormsModule],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        SideBarComponent,
+        BackgroundComponent,
+        MailFormComponent,
+        ChapterHeadingComponent,
+        TimelineComponent,
+        SkillComponent,
+        ProjectComponent,
+        AboutMeComponent,
+        MobileSidebarComponent,
+        ContactComponent,
+    ],
+    imports: [BrowserModule, FormsModule],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

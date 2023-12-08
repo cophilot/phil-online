@@ -1,11 +1,11 @@
 <a
-  *ngFor="let s of skills"
-  [style.top]="s.currY + 'px'"
-  [style.left]="s.currX + 'px'"
-  [href]="s.url"
-  target="_blank"
-  class="skill"
+    *ngFor="let s of skills"
+    [style.top]="s.currY + 'px'"
+    [style.left]="s.currX + 'px'"
+    [href]="s.url"
+    target="_blank"
+    class="skill"
 >
-  <img [src]="s.img" [alt]="s.name" class="skillImg" />
-  <p class="skillName">{{ s.name }}</p>
+    <img [src]="s.img" [alt]="s.name" class="skillImg" />
+    <p class="skillName">{{ s.name }}</p>
 </a>

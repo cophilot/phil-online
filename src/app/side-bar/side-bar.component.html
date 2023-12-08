@@ -1,67 +1,67 @@
 <div *ngIf="showSidebar">
-  <img
-    src="assets/{{ colorSchema === 'dark' ? 'light' : 'dark' }}mode.png"
-    style="top: 20px"
-    [style.left]="offsetLeft + 'px'"
-    (click)="toggleColorSchema()"
-  />
+    <img
+        src="assets/{{ colorSchema === 'dark' ? 'light' : 'dark' }}mode.png"
+        style="top: 20px"
+        [style.left]="offsetLeft + 'px'"
+        (click)="toggleColorSchema()"
+    />
 
-  <img
-    src="assets/chapters{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
-    style="top: 80px"
-    [style.left]="offsetLeft + 'px'"
-    (click)="toggleChapters()"
-  />
-  <div class="chapters" *ngIf="showChapters">
+    <img
+        src="assets/chapters{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
+        style="top: 80px"
+        [style.left]="offsetLeft + 'px'"
+        (click)="toggleChapters()"
+    />
+    <div class="chapters" *ngIf="showChapters">
+        <button
+            *ngFor="let chapter of chapters"
+            [style.top]="140 + chapter.id * 60 + 'px'"
+            [style.left]="offsetLeft + 10 + 'px'"
+            [attr.long-text]="chapter.name.substring(2)"
+            (click)="goToChapter(chapter.id)"
+        >
+            <span>{{ chapter.name.charAt(0) + chapter.name.charAt(1) }}</span>
+        </button>
+    </div>
+
     <button
-      *ngFor="let chapter of chapters"
-      [style.top]="140 + chapter.id * 60 + 'px'"
-      [style.left]="offsetLeft + 10 + 'px'"
-      [attr.long-text]="chapter.name.substring(2)"
-      (click)="goToChapter(chapter.id)"
+        [style.top]="140 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+        [style.left]="offsetLeft + 10 + 'px'"
+        [attr.long-text]="isEnglish ? 'utsch' : 'glish'"
+        (click)="toggleLanguage()"
     >
-      <span>{{ chapter.name.charAt(0) + chapter.name.charAt(1) }}</span>
+        <span>{{ isEnglish ? 'de' : 'en' }}</span>
     </button>
-  </div>
 
-  <button
-    [style.top]="140 + (showChapters ? chapters.length * 60 : 0) + 'px'"
-    [style.left]="offsetLeft + 10 + 'px'"
-    [attr.long-text]="isEnglish ? 'utsch' : 'glish'"
-    (click)="toggleLanguage()"
-  >
-    <span>{{ isEnglish ? "de" : "en" }}</span>
-  </button>
+    <img
+        src="assets/top{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
+        [style.top]="200 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+        [style.left]="offsetLeft + 'px'"
+        (click)="goToTop()"
+    />
+    <img
+        src="assets/shell{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
+        [style.top]="260 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+        [style.left]="offsetLeft + 'px'"
+        (click)="goToShell()"
+    />
 
-  <img
-    src="assets/top{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
-    [style.top]="200 + (showChapters ? chapters.length * 60 : 0) + 'px'"
-    [style.left]="offsetLeft + 'px'"
-    (click)="goToTop()"
-  />
-  <img
-    src="assets/shell{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
-    [style.top]="260 + (showChapters ? chapters.length * 60 : 0) + 'px'"
-    [style.left]="offsetLeft + 'px'"
-    (click)="goToShell()"
-  />
-
-  <button
-    [style.top]="320 + (showChapters ? chapters.length * 60 : 0) + 'px'"
-    [style.left]="offsetLeft + 10 + 'px'"
-    (click)="close()"
-  >
-    X
-  </button>
+    <button
+        [style.top]="320 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+        [style.left]="offsetLeft + 10 + 'px'"
+        (click)="close()"
+    >
+        X
+    </button>
 </div>
 
 <div
-  class="burgerMenu"
-  *ngIf="showSidebar == false"
-  (click)="open()"
-  [style.left]="offsetLeft + 10 + 'px'"
+    class="burgerMenu"
+    *ngIf="showSidebar == false"
+    (click)="open()"
+    [style.left]="offsetLeft + 10 + 'px'"
 >
-  <div class="burgerBar"></div>
-  <div class="burgerBar"></div>
-  <div class="burgerBar"></div>
+    <div class="burgerBar"></div>
+    <div class="burgerBar"></div>
+    <div class="burgerBar"></div>
 </div>

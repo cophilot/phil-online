@@ -8,7 +8,7 @@
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "deploy": "ng deploy --base-href=https://philipp-bonin.com --cname=philipp-bonin.com",
-        "format": "prettier --write"
+        "format": "prettier --write ./src"
     },
     "private": true,
     "dependencies": {

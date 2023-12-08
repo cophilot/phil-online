@@ -1,13 +1,13 @@
 <div
-  *ngFor="let p of projects"
-  [style.bottom]="offsetBottom + 'px'"
-  class="container"
-  [style.display]="p.active ? 'block' : 'none'"
+    *ngFor="let p of projects"
+    [style.bottom]="offsetBottom + 'px'"
+    class="container"
+    [style.display]="p.active ? 'block' : 'none'"
 >
-  <img [src]="p.img" [alt]="p.name" />
-  <div class="project">
-    <p class="name">{{ p.name }}</p>
-    <p class="description">{{ p.description }}</p>
-    <a [href]="p.url" target="_blank">{{ p.buttonText }}</a>
-  </div>
+    <img [src]="p.img" [alt]="p.name" />
+    <div class="project">
+        <p class="name">{{ p.name }}</p>
+        <p class="description">{{ p.description }}</p>
+        <a [href]="p.url" target="_blank">{{ p.buttonText }}</a>
+    </div>
 </div>

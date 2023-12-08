@@ -1,13 +1,13 @@
 <app-background class="background"></app-background>
 <app-side-bar
-  *ngIf="!isMobile"
-  [chapters]="chapters"
-  (languageChangeEmitter)="setLanguage()"
+    *ngIf="!isMobile"
+    [chapters]="chapters"
+    (languageChangeEmitter)="setLanguage()"
 ></app-side-bar>
 <app-mobile-sidebar
-  *ngIf="isMobile"
-  [chapters]="chapters"
-  (languageChangeEmitter)="setLanguage()"
+    *ngIf="isMobile"
+    [chapters]="chapters"
+    (languageChangeEmitter)="setLanguage()"
 ></app-mobile-sidebar>
 
 <!-- <section>
@@ -25,44 +25,44 @@
   <h1>phil-online</h1>
 </section> -->
 <app-about-me
-  [fullText]="aboutMeText"
-  [start]="getChapterByName('about', 'über-mich').start"
-  [length]="getChapterByName('about', 'über-mich').length"
+    [fullText]="aboutMeText"
+    [start]="getChapterByName('about', 'über-mich').start"
+    [length]="getChapterByName('about', 'über-mich').length"
 ></app-about-me>
 <app-timeline
-  [points]="educationTimeLine"
-  [start]="getChapterByName('education', 'ausbildung').start"
-  [speed]="1"
-  [backwards]="true"
+    [points]="educationTimeLine"
+    [start]="getChapterByName('education', 'ausbildung').start"
+    [speed]="1"
+    [backwards]="true"
 ></app-timeline>
 <app-timeline
-  [points]="workingLifeTimeLine"
-  [start]="getChapterByName('work', 'arbeit').start"
-  [speed]="2"
-  [backwards]="false"
+    [points]="workingLifeTimeLine"
+    [start]="getChapterByName('work', 'arbeit').start"
+    [speed]="2"
+    [backwards]="false"
 ></app-timeline>
 
 <app-chapter-heading
-  *ngFor="let c of chapters"
-  [chapter]="c"
+    *ngFor="let c of chapters"
+    [chapter]="c"
 ></app-chapter-heading>
 <app-chapter-heading [chapter]="endChapter"></app-chapter-heading>
 
 <app-skill
-  [skills]="skills"
-  [start]="getChapterByName('skills', 'fähigkeiten').start"
-  [length]="getChapterByName('skills', 'fähigkeiten').length"
+    [skills]="skills"
+    [start]="getChapterByName('skills', 'fähigkeiten').start"
+    [length]="getChapterByName('skills', 'fähigkeiten').length"
 ></app-skill>
 
 <app-project
-  [projects]="getProjects()"
-  [start]="getChapterByName('projects', 'projekte').start"
-  [length]="getChapterByName('projects', 'projekte').length"
+    [projects]="getProjects()"
+    [start]="getChapterByName('projects', 'projekte').start"
+    [length]="getChapterByName('projects', 'projekte').length"
 ></app-project>
 <app-contact
-  [projects]="contacts"
-  [start]="getChapterByName('contact', 'kontakt').start"
-  [length]="getChapterByName('contact', 'kontakt').length"
+    [projects]="contacts"
+    [start]="getChapterByName('contact', 'kontakt').start"
+    [length]="getChapterByName('contact', 'kontakt').length"
 ></app-contact>
 
 <p *ngIf="showHelp" class="help" (click)="hideHelp()">{{ helpText }}</p>
