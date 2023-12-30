@@ -7,7 +7,7 @@
     />
 
     <img
-        src="assets/chapters{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
+        src="assets/chapters{{ colorSchema === 'dark' ? 'Light' : 'Dark' }}.png"
         style="top: 80px"
         [style.left]="offsetLeft + 'px'"
         (click)="toggleChapters()"
@@ -34,7 +34,7 @@
     </button>
 
     <img
-        src="assets/top{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
+        src="assets/top{{ colorSchema === 'dark' ? 'Light' : 'Dark' }}.png"
         [style.top]="200 + (showChapters ? chapters.length * 60 : 0) + 'px'"
         [style.left]="offsetLeft + 'px'"
         (click)="goToTop()"
