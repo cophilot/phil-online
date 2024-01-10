@@ -22,7 +22,7 @@ export class ContentService {
 
     static initProjects() {
         fetch(
-            'https://raw.githubusercontent.com/phil1436/.project-provider/main/projects.json'
+            'https://raw.githubusercontent.com/cophilot/.project-provider/main/projects.json'
         ).then((response) => {
             response.json().then((json: any[]) => {
                 this.projects = {

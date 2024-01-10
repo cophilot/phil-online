@@ -12,9 +12,9 @@ const getContacts = (isEnglish: boolean): Project[] => {
             ),
             new Project(
                 'github',
-                'https://github.com/phil1436',
+                'https://github.com/cophilot',
                 'assets/github_icon.png',
-                'phil1436',
+                'cophilot',
                 'ansehen'
             ),
         ];
@@ -29,9 +29,9 @@ const getContacts = (isEnglish: boolean): Project[] => {
         ),
         new Project(
             'github',
-            'https://github.com/phil1436',
+            'https://github.com/cophilot',
             'assets/github_icon.png',
-            'phil1436',
+            'cophilot',
             'view'
         ),
     ];
