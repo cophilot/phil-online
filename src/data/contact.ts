@@ -5,9 +5,9 @@ const getContacts = (isEnglish: boolean): Project[] => {
         return [
             new Project(
                 'e-mail',
-                'mailto:phil.likes.coding@gmail.com',
+                'mailto:info@philipp-bonin.com',
                 'assets/mail_icon.png',
-                'phil.likes.coding@gmail.com',
+                'info@philipp-bonin.com',
                 'öffnen'
             ),
             new Project(
@@ -22,9 +22,9 @@ const getContacts = (isEnglish: boolean): Project[] => {
     return [
         new Project(
             'e-mail',
-            'mailto:phil.likes.coding@gmail.com',
+            'mailto:info@philipp-bonin.com',
             'assets/mail_icon.png',
-            'phil.likes.coding@gmail.com',
+            'info@philipp-bonin.com',
             'open'
         ),
         new Project(
