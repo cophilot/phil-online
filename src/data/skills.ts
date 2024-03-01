@@ -79,9 +79,9 @@ const getSkills = () => {
             y + 120
         ),
         new Skill(
-            'c++',
-            'https://www.w3schools.com/cpp/',
-            'https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg',
+            'rust',
+            'https://www.rust-lang.org/',
+            'https://rust-lang.org/logos/rust-logo-512x512.png',
             600,
             y + 120
         ),

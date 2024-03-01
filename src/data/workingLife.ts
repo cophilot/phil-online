@@ -43,8 +43,14 @@ function getWorkingLifeTimeline(inEnglish: boolean): TimelinePoint[] {
             new TimelinePoint(
                 'sales engineer intern',
                 'intersystems',
-                'apr 22 - aktuell',
+                'apr 22 - feb 24',
                 'https://www.intersystems.com/'
+            ),
+            new TimelinePoint(
+                'software developer intern',
+                'cqse',
+                'feb 24 - aktuell',
+                'https://teamscale.com/about-us'
             ),
         ];
     }
@@ -83,8 +89,14 @@ function getWorkingLifeTimeline(inEnglish: boolean): TimelinePoint[] {
         new TimelinePoint(
             'sales engineer intern',
             'intersystems',
-            'apr 22 - current',
+            'apr 22 - feb 24',
             'https://www.intersystems.com/'
+        ),
+        new TimelinePoint(
+            'software developer intern',
+            'cqse',
+            'feb 24 - current',
+            'https://teamscale.com/about-us'
         ),
     ];
 }
