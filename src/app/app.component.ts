@@ -110,7 +110,7 @@ export class AppComponent {
                 if (window.scrollY == this.yStartPosition) {
                     this.showHelp = true;
                 }
-            }, 20000);
+            }, 7000);
         }
     }
 

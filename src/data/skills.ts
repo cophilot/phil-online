@@ -21,23 +21,23 @@ const getSkills = () => {
             y
         ),
         new Skill(
-            'javascript',
-            'https://www.javascript.com/',
-            'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg',
+            'svelte',
+            'https://svelte.dev/',
+            'https://static-00.iconduck.com/assets.00/svelte-icon-426x512-cm99sfkq.png',
             400,
             y
         ),
         new Skill(
-            'vue.js',
-            'https://vuejs.org/',
-            'https://camo.githubusercontent.com/0b17e5a01574a2c1251b51c910c422f6ca6cb968a52686a770b668a634792c09/68747470733a2f2f7675656a732e6f72672f696d616765732f6c6f676f2e706e67',
+            'sql',
+            'https://en.wikipedia.org/wiki/SQL',
+            'https://www.svgrepo.com/show/331760/sql-database-generic.svg',
             600,
             y
         ),
         new Skill(
-            'node-red',
-            'https://vitejs.dev/',
-            'https://camo.githubusercontent.com/2e1efd50b61f26c56e82929d735dce115937350e280abac98641c79d765da27c/68747470733a2f2f766974656a732e6465762f6c6f676f2e737667',
+            'bash',
+            'https://en.wikipedia.org/wiki/Bash_(Unix_shell)',
+            'https://runcode-app-public.s3.amazonaws.com/images/bash-shell-script-online-editor-compiler.original.png',
             520,
             y
         ),
