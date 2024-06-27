@@ -1,37 +1,27 @@
-<div align="center">
-    <br />
-    <img src="src/assets/logoPhilOnline.png" alt="phil-onlineLogo" width="30%"/>
-    <h1>phil-online</h1>
-    <p>
-        A simple personal website to show my projects and stuff.
-    </p>
-</div>
+# PhilOnline
 
-<div align="center">
-    <a href="https://philipp-bonin.com/">
-        <img src="https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fphilipp-bonin.com%2F" alt="website">
-    </a>
-    <a href="https://github.com/cophilot/phil-online/blob/master/LICENSE">
-        <img src="https://img.shields.io/github/license/cophilot/phil-online" alt="license">
-    </a>
-    <a href="https://github.com/cophilot/phil-online/stargazers">
-        <img src="https://img.shields.io/github/stars/cophilot/phil-online" alt="stars">
-    </a>
-    <a href="https://github.com/cophilot/phil-online/commits/master">
-        <img src="https://img.shields.io/github/last-commit/cophilot/phil-online" alt="last commit">
-    </a>
-</div>
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
 
----
+## Development server
 
-View the Application [here](https://philipp-bonin.com/).
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
----
+## Code scaffolding
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
----
+## Build
 
-by [Philipp B.](https://github.com/cophilot)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-<!-- ng deploy --base-href=https://philipp-bonin.com --cname=philipp-bonin.com-->
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
