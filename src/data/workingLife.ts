@@ -49,8 +49,14 @@ function getWorkingLifeTimeline(inEnglish: boolean): TimelinePoint[] {
             new TimelinePoint(
                 'software developer',
                 'cqse',
-                'feb 24 - aktuell',
+                'feb 24 - jul 24',
                 'https://teamscale.com/about-us'
+            ),
+            new TimelinePoint(
+                'software developer',
+                'telespazio germany',
+                'aug 24 - laufend',
+                'https://www.telespazio.de'
             ),
         ];
     }
@@ -95,8 +101,14 @@ function getWorkingLifeTimeline(inEnglish: boolean): TimelinePoint[] {
         new TimelinePoint(
             'software developer',
             'cqse',
-            'feb 24 - current',
+            'feb 24 - jul 24',
             'https://teamscale.com/about-us'
+        ),
+        new TimelinePoint(
+            'software developer',
+            'telespazio germany',
+            'aug 24 - current',
+            'https://www.telespazio.de'
         ),
     ];
 }
