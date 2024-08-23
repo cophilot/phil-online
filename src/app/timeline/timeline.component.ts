@@ -41,7 +41,7 @@ export class TimelineComponent {
         }
 
         for (let i = 0; i < this.points.length; i++) {
-            if (i * this.distanceBetweenPoints + this.offsetLeft < 300) {
+            if (i * this.distanceBetweenPoints + this.offsetLeft < 600) {
                 this.points[i].active = true;
             } else {
                 this.points[i].active = false;

@@ -1,15 +1,23 @@
-*
+.text-box
   position: fixed
+  left: 300px
+  bottom: 0px
+  display: flex
+  flex-direction: column
+  margin: 0px
+  height: 400px
+.cur-box
+  display: flex
+  flex-direction: row
 
 .text
   white-space: pre-line
   font-size: var(--font-size-middle)
-  bottom: 0px
-  left: 300px
   line-height: 1.5
-  height: 300px
   cursor: default
   text-shadow: var(--shadow-small)
+  margin-bottom: 0px
+  margin-top: 0px
 
 .cursor
   width: 5px
@@ -17,13 +25,17 @@
   background-color: var(--text-color)
   animation: blink 1s infinite
   box-shadow: var(--shadow-small)
+  margin-left: 5px
+  margin-top: 5px
 
 @media screen and (max-width: 800px)
-  .text
+  .text-box
     left: 20px
+
+  .text
     height: 350px
-    .cursor
-      height: 30px
+  .cursor
+    height: 30px
 
 @keyframes blink
   0%

@@ -23,35 +23,32 @@
             <span>{{ chapter.name.charAt(0) + chapter.name.charAt(1) }}</span>
         </button>
     </div>
-
-    <button
+    <img
+        src="assets/top{{ colorSchema === 'dark' ? 'Light' : 'Dark' }}.png"
         [style.top]="140 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+        [style.left]="offsetLeft + 'px'"
+        (click)="goToTop()"
+    />
+    <img
+        src="assets/shell{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
+        [style.top]="200 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+        [style.left]="offsetLeft + 'px'"
+        (click)="goToShell()"
+    />
+    <button
+        [style.top]="260 + (showChapters ? chapters.length * 60 : 0) + 'px'"
         [style.left]="offsetLeft + 10 + 'px'"
         [attr.long-text]="isEnglish ? 'utsch' : 'glish'"
         (click)="toggleLanguage()"
     >
         <span>{{ isEnglish ? 'de' : 'en' }}</span>
     </button>
-
-    <img
-        src="assets/top{{ colorSchema === 'dark' ? 'Light' : 'Dark' }}.png"
-        [style.top]="200 + (showChapters ? chapters.length * 60 : 0) + 'px'"
-        [style.left]="offsetLeft + 'px'"
-        (click)="goToTop()"
-    />
-    <img
-        src="assets/shell{{ colorSchema === 'dark' ? 'light' : 'dark' }}.png"
-        [style.top]="260 + (showChapters ? chapters.length * 60 : 0) + 'px'"
-        [style.left]="offsetLeft + 'px'"
-        (click)="goToShell()"
-    />
-
     <button
-        [style.top]="320 + (showChapters ? chapters.length * 60 : 0) + 'px'"
-        [style.left]="offsetLeft + 10 + 'px'"
+        [style.top]="300 + (showChapters ? chapters.length * 60 : 0) + 'px'"
+        [style.left]="offsetLeft + 8 + 'px'"
         (click)="close()"
     >
-        X
+        <i class="bi bi-x-circle"></i>
     </button>
 </div>
 

@@ -21,9 +21,9 @@ const getSkills = () => {
             y
         ),
         new Skill(
-            'svelte',
-            'https://svelte.dev/',
-            'https://static-00.iconduck.com/assets.00/svelte-icon-426x512-cm99sfkq.png',
+            'c++',
+            'https://en.wikipedia.org/wiki/C%2B%2B',
+            'https://www.vikingsoftware.com/wp-content/uploads/2024/02/C-2.png',
             400,
             y
         ),

@@ -12,6 +12,8 @@ export class AboutMeComponent {
     @Input() fullText: string = '';
 
     text: string = '';
+    lines: string[] = [];
+    lastLine = '';
     offsetBottom: number = 0;
     cursorVisible: boolean = false;
 
@@ -25,6 +27,13 @@ export class AboutMeComponent {
     @HostListener('window:scroll', ['$event'])
     OnScroll(event: any) {
         this.setText(window.scrollY);
+        this.setLines();
+    }
+
+    setLines(): void {
+        this.lines = this.text.split('\n');
+        this.lastLine = this.lines[this.lines.length - 1];
+        this.lines = this.lines.slice(0, this.lines.length - 1);
     }
 
     setText(y: number): void {

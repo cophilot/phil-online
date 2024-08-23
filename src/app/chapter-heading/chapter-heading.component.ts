@@ -20,6 +20,15 @@ export class ChapterHeadingComponent {
         this.setOffsetTop(window.scrollY);
     }
 
+    onClick(): void {
+        window.scrollTo({ top: this.start, behavior: 'smooth' });
+        // set chapter head in the url
+        window.history.pushState(
+            '',
+            '',
+             this.chapter.name
+        );
+    }
     @HostListener('window:scroll', ['$event'])
     OnScroll(event: any) {
         this.setOffsetTop(window.scrollY);

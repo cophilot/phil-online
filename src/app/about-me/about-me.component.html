@@ -1,7 +1,14 @@
-<p class="text" [style.bottom]="offsetBottom + 'px'">{{ text }}</p>
-<div
+
+<div class="text-box" [style.bottom]="offsetBottom + 'px'">
+
+
+  <p class="text"  *ngFor="let l of lines">{{ l }}</p>
+  <div class="cur-box">
+    <p class="text"  >{{ lastLine }}</p>
+    <div
     class="cursor"
     *ngIf="cursorVisible"
-    [style.bottom]="offsetCursorBottom + 'px'"
-    [style.left]="offsetCursorLeft + 'px'"
-></div>
+    ></div>
+  </div>
+</div>
+
