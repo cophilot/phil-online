@@ -55,6 +55,19 @@ export class TimelinePoint {
     }
 }
 
+export class Contact {
+    public text: string;
+    public iconClass: string;
+    public link: string;
+    public active: boolean = false;
+
+    constructor(text: string, iconClass: string, link: string) {
+        this.text = text;
+        this.iconClass = iconClass + ' bi';
+        this.link = link;
+    }
+}
+
 export class Project {
     public name: string;
     public url: string;

@@ -1,38 +1,21 @@
-import { Project } from 'src/app/utils/classes';
+import { Contact, Project } from 'src/app/utils/classes';
 
-const getContacts = (isEnglish: boolean): Project[] => {
-    if (!isEnglish) {
-        return [
-            new Project(
-                'e-mail',
-                'mailto:info@philipp-bonin.com',
-                'assets/mail_icon.png',
-                'info@philipp-bonin.com',
-                'öffnen'
-            ),
-            new Project(
-                'github',
-                'https://github.com/cophilot',
-                'assets/github_icon.png',
-                'cophilot',
-                'ansehen'
-            ),
-        ];
-    }
+const getContacts = (): Contact[] => {
     return [
-        new Project(
-            'e-mail',
-            'mailto:info@philipp-bonin.com',
-            'assets/mail_icon.png',
+        new Contact(
             'info@philipp-bonin.com',
-            'open'
+            'bi-envelope',
+            'mailto:info@philipp-bonin.com'
         ),
-        new Project(
-            'github',
+        new Contact(
             'https://github.com/cophilot',
-            'assets/github_icon.png',
-            'cophilot',
-            'view'
+            'bi-github',
+            'https://github.com/cophilot'
+        ),
+        new Contact(
+            'https://linkedin.com/in/philippb',
+            'bi-linkedin',
+            'https://linkedin.com/in/philippb'
         ),
     ];
 };

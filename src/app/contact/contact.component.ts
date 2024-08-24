@@ -1,60 +1,61 @@
 import { Component, Input, HostListener } from '@angular/core';
-import { Project } from '../utils/classes';
 import { AppComponent } from '../app.component';
+import getContacts from 'src/data/contact';
+import { Contact } from '../utils/classes';
 
 @Component({
     selector: 'app-contact',
     templateUrl: './contact.component.html',
-    styleUrls: ['./contact.component.sass'],
+    styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
     @Input() start: number = 2000;
     @Input() length: number = 3000;
 
-    offsetBottom: number = -200;
+    offsetBottom: number = -600;
+    small: boolean = false;
 
-    @Input() projects: any[] = [];
+    contacts: Contact[] = getContacts();
 
     ngOnInit(): void {
         this.setOffsetBottom(window.scrollY);
+        this.setContactActivity(window.scrollY);
     }
 
     @HostListener('window:scroll', ['$event'])
     OnScroll(event: any) {
         this.setOffsetBottom(window.scrollY);
+        this.setContactActivity(window.scrollY);
     }
 
     setOffsetBottom(y: number): void {
-        let section = Math.floor(this.length / this.projects.length / 3);
-        let dif = 300;
-
-        y = y - this.start;
-
-        if (y < 0 || y > this.length) {
-            this.offsetBottom = -200;
-            if (AppComponent.IS_MOBILE) {
-                this.offsetBottom = -400;
-            }
-            return;
-        }
-
-        let i = Math.floor(y / (section * 3));
-        let project = this.projects[i];
-        project.active = true;
-
-        for (let j = 0; j < this.projects.length; j++) {
-            if (j != i) {
-                this.projects[j].active = false;
-            }
-        }
-
-        let offset = y - i * section * 3;
-        if (offset < section) {
-            this.offsetBottom = 100 - (section - offset);
-        } else if (offset < section * 2) {
-            this.offsetBottom = 100;
+        if (y < this.start - 500) {
+            this.offsetBottom = -600;
+        } else if (y < this.start) {
+            this.offsetBottom = -100 + (y - this.start);
+        } else if (y > this.start + this.length) {
+            this.offsetBottom = (y - (this.start + this.length)) * 0.5;
         } else {
-            this.offsetBottom = 100 - (offset - section * 2);
+            this.offsetBottom = -20;
         }
+    }
+
+    setContactActivity(y: number): void {
+        const section = this.length / this.contacts.length;
+        let index = Math.floor((y - this.start) / section);
+        if (y >= this.start + this.length) {
+            index = this.contacts.length - 1;
+        }
+        this.contacts.forEach((contact, i) => {
+            contact.active = i === index;
+        });
+    }
+
+    getContactsByState(active: boolean): Contact[] {
+        return this.contacts.filter((contact) => contact.active === active);
+    }
+
+    openLink(url: string): void {
+        window.open(url, '_blank');
     }
 }

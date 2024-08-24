@@ -28,7 +28,6 @@ export class AppComponent {
     educationTimeLine: TimelinePoint[] = [];
     skills: Skill[] = [];
     projects: Project[] = [];
-    contacts: Project[] = [];
     helpText: string = '';
     aboutMeText: string = '';
     showHelp: boolean = false;
@@ -108,7 +107,7 @@ export class AppComponent {
         if (needHelp == null || needHelp == 'true') {
             setTimeout(() => {
                 if (window.scrollY == this.yStartPosition) {
-                    this.showHelp = true;
+                    //this.showHelp = true;
                 }
             }, 7000);
         }
@@ -181,7 +180,6 @@ export class AppComponent {
             AppComponent.IS_ENGLISH
         );
         this.educationTimeLine = getEducationTimeline(AppComponent.IS_ENGLISH);
-        this.contacts = getContacts(AppComponent.IS_ENGLISH);
         this.aboutMeText = getAboutMeText(AppComponent.IS_ENGLISH);
         if (AppComponent.IS_ENGLISH) {
             this.helpText = 'Scroll down to see more';

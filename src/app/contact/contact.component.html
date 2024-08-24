@@ -1,4 +1,4 @@
-<div
+<!-- <div
     *ngFor="let p of projects"
     [style.bottom]="offsetBottom + 'px'"
     class="container"
@@ -9,5 +9,55 @@
         <p class="name">{{ p.name }}</p>
         <p class="description">{{ p.description }}</p>
         <a [href]="p.url" target="_blank">{{ p.buttonText }}</a>
+    </div>
+</div>
+ -->
+
+<!-- <div class="window" [style.bottom]="offsetBottom + 'px'"> -->
+<div class="window" [style.bottom]="offsetBottom + 'px'">
+    <div class="top-bar">
+        <div class="dot-box">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div
+            class="tab-bar desktop"
+            *ngFor="let c of contacts"
+            [class]="!c.active ? 'tab-small' : ''"
+            (click)="openLink(c.link)"
+        >
+            <div class="hor">
+                <i [class]="c.iconClass"></i>
+                <p class="text">{{ c.text }}</p>
+            </div>
+            <i class="bi bi-arrow-up-right-square copy"></i>
+        </div>
+        <div class="mobile">
+            <div
+                class="tab-bar"
+                *ngFor="let c of getContactsByState(true)"
+                (click)="openLink(c.link)"
+            >
+                <div class="hor">
+                    <i [class]="c.iconClass"></i>
+                    <p class="text">{{ c.text }}</p>
+                </div>
+                <i class="bi bi-arrow-up-right-square copy"></i>
+            </div>
+            <div class="hor">
+                <div
+                    class="tab-bar tab-small"
+                    *ngFor="let c of getContactsByState(false)"
+                    (click)="openLink(c.link)"
+                >
+                    <div class="hor">
+                        <i [class]="c.iconClass"></i>
+                        <p class="text">{{ c.text }}</p>
+                    </div>
+                    <i class="bi bi-arrow-up-right-square copy"></i>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
