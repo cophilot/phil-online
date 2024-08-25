@@ -23,11 +23,7 @@ export class ChapterHeadingComponent {
     onClick(): void {
         window.scrollTo({ top: this.start, behavior: 'smooth' });
         // set chapter head in the url
-        window.history.pushState(
-            '',
-            '',
-             this.chapter.name
-        );
+        window.history.pushState('', '', '#/' + this.chapter.name);
     }
     @HostListener('window:scroll', ['$event'])
     OnScroll(event: any) {

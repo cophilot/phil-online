@@ -111,28 +111,32 @@
     .desktop {
         display: none;
     }
+    .mobile {
+        display: block;
+    }
     .window {
         width: 90%;
         height: 400px;
     }
     .top-bar {
-        width: 100%;
-        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: begin;
     }
     .tab-bar {
         width: 85vw;
         margin-left: 5px;
         p {
-            font-size: var(--font-size-small);
-            font-size: 12px;
+            font-size: 16px;
         }
         i {
             font-size: 20px;
         }
     }
     .tab-small {
+        width: 60px;
         margin-top: 10px;
-        width: 41vw;
         justify-content: center;
         align-items: center;
     }

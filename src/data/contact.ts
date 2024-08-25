@@ -8,12 +8,12 @@ const getContacts = (): Contact[] => {
             'mailto:info@philipp-bonin.com'
         ),
         new Contact(
-            'https://github.com/cophilot',
+            'github.com/cophilot',
             'bi-github',
             'https://github.com/cophilot'
         ),
         new Contact(
-            'https://linkedin.com/in/philippb',
+            'linkedin.com/philippb',
             'bi-linkedin',
             'https://linkedin.com/in/philippb'
         ),
