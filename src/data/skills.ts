@@ -122,7 +122,17 @@ const getSkills = () => {
             skills[j].y = y + 120;
         }
     }
+    let sSkill = new Skill(
+        '',
+        'https://preview.redd.it/5sffvz3agyz71.jpg?auto=webp&s=94c56da4658c940acba9c51415bb1fb33f66fa04',
+        'assets/tardes.png',
+        -200,
+        -200
+    );
 
+    sSkill.startX = window.innerWidth + 100;
+    sSkill.startY = window.innerHeight - 200;
+    skills.push(sSkill);
     return skills;
 };
 
