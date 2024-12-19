@@ -25,6 +25,7 @@
     box-shadow: var(--shadow-small);
     border: 2px solid var(--text-color);
     position: fixed;
+    backdrop-filter: blur(10px);
 }
 .dot-box {
     display: flex;

@@ -13,7 +13,13 @@ const getEducationTimeline = (inEnglish: boolean): TimelinePoint[] => {
             new TimelinePoint(
                 'b.sc. informatik',
                 'tu darmstadt',
-                'okt 20 - aktuell',
+                'okt 20 - mär 25',
+                'https://www.tu-darmstadt.de/'
+            ),
+            new TimelinePoint(
+                'm.sc. informatik',
+                'tu darmstadt',
+                'apr 25',
                 'https://www.tu-darmstadt.de/'
             ),
         ];
@@ -29,7 +35,13 @@ const getEducationTimeline = (inEnglish: boolean): TimelinePoint[] => {
         new TimelinePoint(
             'b.sc. computer science',
             'tu darmstadt',
-            'oct 20 - current',
+            'oct 20 - mar 25',
+            'https://www.tu-darmstadt.de/'
+        ),
+        new TimelinePoint(
+            'm.sc. computer science',
+            'tu darmstadt',
+            'apr 25',
             'https://www.tu-darmstadt.de/'
         ),
     ];

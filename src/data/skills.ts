@@ -9,7 +9,7 @@ const getSkills = () => {
         new Skill(
             'angular',
             'https://angular.io/',
-            'https://seeklogo.com/images/A/angular-icon-logo-5FC0C40EAC-seeklogo.com.png',
+            'https://images.seeklogo.com/logo-png/50/2/angular-icon-logo-png_seeklogo-507324.png?v=638686931700000000',
             400,
             y
         ),
